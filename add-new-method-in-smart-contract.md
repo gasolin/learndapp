@@ -2,9 +2,11 @@
 
 我們在`HelloWorld.sol`中再加入一個`echo`方法，`echo`方法接受輸入一個參數，並回傳傳送的參數。
 
-| function echo\(string name\) constant returns \(string\) {   return name; }  |
-| :--- |
-
+```
+function echo(string name) constant returns (string) {
+    return name;
+}
+```
 
 新的`echo`方法中傳入了一個`name`參數。我們也為`echo`方法加入一個`constant`宣告，表示呼叫這個方法並不會改變區塊鏈的狀態。如此一來，透過`truffle-contract`來呼叫此方法時，會自動選用`call`來呼叫，也不需要額外提供gas。
 
@@ -30,9 +32,9 @@ truffle 4.0.0 版本之後加入了`truffle develop`命令。這個命令讓我�
 
 例如
 
-| truffle develop Truffle Develop started at http://localhost:9545/  Accounts: \(0\) 0x627306090abab3a6e1400e9345bc60c78a8bef57 \(1\) 0xf17f52151ebef6c7334fad080c5704d77216b732 \(2\) 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef \(3\) 0x821aea9a577a9b44299b9c15c88cf3087f3b5544 \(4\) 0x0d1d4e623d10f9fba5db95830f7d3839406c6af2 \(5\) 0x2932b7a2355d6fecc4b5c0b6bd44cc31df247a2e \(6\) 0x2191ef87e392377ec08e7c08eb105ef5448eced5 \(7\) 0x0f4f2ac550a1b4e2280d04c21cea7ebd822934b5 \(8\) 0x6330a553fc93768f612722bb8c2ec78ac90b3bbc \(9\) 0x5aeda56215b167893e80b4fe645ba6d5bab767de  Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat  truffle\(develop\)&gt; compile truffle\(develop\)&gt; migrate Using network 'develop'. Running migration: 1\_initial\_migration.js   Deploying Migrations... ... Saving artifacts... Running migration: 2\_deploy\_contracts.js   Deploying HelloWorld... ... Saving artifacts... truffle\(develop\)&gt;let contract truffle\(develop\)&gt; HelloWorld.deployed\(\).then\(instance =&gt;contract = instance\) ... truffle\(develop\)&gt; contract.sayHello.call\(\) 'Hello World'  |
-| :--- |
-
+```
+ truffle develop Truffle Develop started at http://localhost:9545/  Accounts: \(0\) 0x627306090abab3a6e1400e9345bc60c78a8bef57 \(1\) 0xf17f52151ebef6c7334fad080c5704d77216b732 \(2\) 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef \(3\) 0x821aea9a577a9b44299b9c15c88cf3087f3b5544 \(4\) 0x0d1d4e623d10f9fba5db95830f7d3839406c6af2 \(5\) 0x2932b7a2355d6fecc4b5c0b6bd44cc31df247a2e \(6\) 0x2191ef87e392377ec08e7c08eb105ef5448eced5 \(7\) 0x0f4f2ac550a1b4e2280d04c21cea7ebd822934b5 \(8\) 0x6330a553fc93768f612722bb8c2ec78ac90b3bbc \(9\) 0x5aeda56215b167893e80b4fe645ba6d5bab767de  Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat  truffle\(develop\)&gt; compile truffle\(develop\)&gt; migrate Using network 'develop'. Running migration: 1\_initial\_migration.js   Deploying Migrations... ... Saving artifacts... Running migration: 2\_deploy\_contracts.js   Deploying HelloWorld... ... Saving artifacts... truffle\(develop\)&gt;let contract truffle\(develop\)&gt; HelloWorld.deployed\(\).then\(instance =&gt;contract = instance\) ... truffle\(develop\)&gt; contract.sayHello.call\(\) 'Hello World'  |
+```
 
 可以看到，在命令行中輸入`truffle develop`命令，可以直接在裡面執行`compile`，`migrate`指令，還可以直接使用`console`命令所提供的與區塊鍊互動等功能。
 
