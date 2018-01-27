@@ -1,10 +1,12 @@
-## 建立第一個智能合約專案 {#建立專案}
+# 建立第一個智能合約專案 {#建立專案}
 
 開啟另一個命令列視窗，輸入以下命令以建立專案：
 
-| $ mkdir hello $ cd hello $ truffle init |
-| :--- |
-
+```sh
+$ mkdir hello
+$ cd hello
+$ truffle init
+```
 
 如此一來，我們已建立好第一份智能合約專案了。
 
@@ -12,49 +14,61 @@
 
 `HelloWorld.sol`檔案內容如下：
 
-| pragma solidity ^0.4.11;  contract HelloWorld {     function sayHello\(\) public returns \(string\) {         return \("Hello World"\);     } } |
-| :--- |
+```
+pragma solidity ^0.4.11;
 
+contract HelloWorld {
+    function sayHello() public returns (string) {
+        return ("Hello World");
+    }
+}
+```
 
 ### 講解 {#講解}
 
-| pragma solidity ^0.4.11; |
-| :--- |
-
+```
+pragma solidity ^0.4.11;
+```
 
 第一行指名目前使用的solidity版本，不同版本的solidity可能會編譯出不同的bytecode。
 
 想要知道當前的solidity版本，也可以用 `truffle version` 命令來查看當前使用的truffle與solidity版本：
 
-| $ truffle version Truffle v4.0.1 \(core: 4.0.1\) Solidity v0.4.18 \(solc-js\) |
-| :--- |
+```sh
+$ truffle version
+Truffle v4.0.1 (core: 4.0.1)
+Solidity v0.4.18 (solc-js)
+```
 
-
-| contract HelloWorld {   ... } |
-| :--- |
-
+```
+contract HelloWorld {
+  ...
+}
+```
 
 `contract`關鍵字類似於其他語言中較常見的`class`。因為solidity是專為智能合約\(Contact\)設計的語言，宣告`contract`後即內建了開發智能合約所需的功能。也可以把這句理解為`class HelloWorld extends Contract`。
 
-雖然一個.sol檔案中可以定義多個Contract，但建議一個.sol檔案中只定義一個Contract以便於後續的維護。
+雖然一個`.sol`檔案中可以定義多個Contract，但建議一個`.sol`檔案中僅單獨定義一個Contract，這麼做有利於後續的維護。
 
-| function sayHello\(\) public returns \(string\) {     return \("Hello World"\); } |
-| :--- |
+```
+function sayHello() public returns (string) {
+    return ("Hello World");
+}
+```
 
+函式的結構與其他程式類似，但如果有傳入的參數或回傳值，需要指定參數或回傳值的型別\(type\)。所有支援的型別可以查看參考資料[^2]。
 
-函式的結構與其他程式類似，但如果有傳入的參數或回傳值，需要指定參數或回傳值的型別\(type\)。所有支援的型別可以查看參考資料[10](https://blog.gasolin.idv.tw/2017/09/06/howto-write-a-smart-contract/#fn:10)。
-
-solidity官方推薦的縮排風格為4個空格[13](https://blog.gasolin.idv.tw/2017/09/06/howto-write-a-smart-contract/#fn:13)。
+solidity官方推薦的縮排風格為4個空格[^5]。
 
 ## 編譯 {#編譯}
 
 現在執行`truffle compile`命令，我們可以將`HelloWorld.sol`原始碼編譯成Ethereum bytecode。
 
-| $ truffle compile |
-| :--- |
+```sh
+$ truffle compile
+```
 
-
-編譯成功的話，在`build/contracts/`目錄下會多出`HelloWorld.json`這個檔案。（在Windows平台上執行truffle compile若遇到問題，可以查看參考資料[9](https://blog.gasolin.idv.tw/2017/09/06/howto-write-a-smart-contract/#fn:9)來解決。）
+編譯成功的話，在`build/contracts/`目錄下會多出`HelloWorld.json`這個檔案。（在Windows平台上執行truffle compile若遇到問題，可以查看參考資料[^1]來解決。）
 
 ## 部署 {#部署}
 
@@ -64,9 +78,13 @@ solidity官方推薦的縮排風格為4個空格[13](https://blog.gasolin.idv.tw
 
 truffle框架中提供了方便部署合約的腳本。我們可以在`migrations/`目錄下維護這些腳本。這些腳本除了能部署合約，也可以用來遷移合約中的資料。建立`migrations/2_deploy_contracts.js`檔案\(這些腳本使用Javascript撰寫\)，將內容修改如下
 
-| var HelloWorld = artifacts.require\("HelloWorld"\);  module.exports = function\(deployer\) {   deployer.deploy\(HelloWorld\); }; |
-| :--- |
+```js
+var HelloWorld = artifacts.require("HelloWorld");
 
+module.exports = function(deployer) {
+  deployer.deploy(HelloWorld);
+};
+```
 
 這些migration檔案會依照檔案的`編號`來執行。例如`2_`就會在`1_`之後執行。檔案後面的文字只為協助開發者理解之用。
 
@@ -76,9 +94,19 @@ truffle框架中提供了方便部署合約的腳本。我們可以在`migration
 
 為了與`testrpc`連線，需要打開`truffle.js`並加入以下設定：
 
-| module.exports = { // See &lt;[http://truffleframework.com/docs/advanced/configuration&gt;](http://truffleframework.com/docs/advanced/configuration&gt); // to customize your Truffle configuration!   networks: {     development: {       host: "localhost",       port: 8545,       network\_id: "\*"// Match any network id     }   } }; |
-| :--- |
-
+```js
+module.exports = {
+  // See <http://truffleframework.com/docs/advanced/configuration>
+  // to customize your Truffle configuration!
+  networks: {
+    development: {
+      host: "localhost",
+      port: 8545,
+      network_id: "*" // Match any network id
+    }
+  }
+};
+```
 
 truffle 使用 Javascript 的 Object 格式來定義設定。這邊定義了`development`網路為`localhost:8545`，即testrpc所提供的網路位址。
 
@@ -86,25 +114,41 @@ truffle 使用 Javascript 的 Object 格式來定義設定。這邊定義了`dev
 
 現在執行`truffle migrate`命令
 
-| $ truffle migrate Using network 'development'.  Running migration: 1\_initial\_migration.js ... Saving successful migration to network... Running migration: 2\_deploy\_contracts.js ... Saving successful migration to network... ... Saving artifacts... |
-| :--- |
+```sh
+$ truffle migrate
+Using network 'development'.
 
+Running migration: 1_initial_migration.js
+...
+Saving successful migration to network...
+Running migration: 2_deploy_contracts.js
+...
+Saving successful migration to network...
+...
+Saving artifacts...
+
+```
 
 如此一來合約已經部署到testrpc中。切換到testrpc視窗，可以看到testrpc有反應了。
 
 ### 與合約互動 {#與合約互動}
 
-truffle提供命令行工具，執行`truffle console`命令後，可用Javascript來和剛剛部署的合約互動。
+truffle提供命令行工具，執行`truffle console`命令後，可用Javascript來呼叫剛剛部署的合約。
 
-| $ truffle console &gt;let contract &gt; HelloWorld.deployed\(\).then\(instance =&gt; contract = instance\) &gt; contract.sayHello.call\(\) 'Hello World' &gt; |
-| :--- |
-
+```sh
+$ truffle console
+> let contract
+> HelloWorld.deployed().then(instance => contract = instance)
+> contract.sayHello.call()
+'Hello World'
+>
+```
 
 #### 講解 {#講解-v2}
 
-| &gt; HelloWorld.deployed\(\).then\(instance =&gt; contract = instance\) |
-| :--- |
-
+```js
+> HelloWorld.deployed().then(instance => contract = instance)
+```
 
 `truffle console`中預載了`truffle-contract`[12](https://blog.gasolin.idv.tw/2017/09/06/howto-write-a-smart-contract/#fn:12)函式庫，以方便操作部署到區塊鏈上的合約。
 
@@ -112,13 +156,16 @@ truffle提供命令行工具，執行`truffle console`命令後，可用Javascri
 
 上面用的是Javascript ES6+的語法，這句也可以寫成
 
-| HelloWorld.deployed\(\).then\(function\(instance\) {   hello = instance; }\); |
-| :--- |
+```js
+HelloWorld.deployed().then(function(instance) {
+  hello = instance;
+});
+```
 
-
-| &gt; contract.sayHello.call\(\) 'Hello World' |
-| :--- |
-
+```sh
+> contract.sayHello.call()
+'Hello World'
+```
 
 這邊直接呼叫`contract.sayHello()`也會得到一樣的結果。`truffle-contract`提供使用`call()`來讀取唯讀\(read only\)的資料，這樣就不需提供gas。因此如果遇到的操作需要向區塊鏈寫入資料，我們就不能用`call`語句了。
 
@@ -126,32 +173,8 @@ truffle提供命令行工具，執行`truffle console`命令後，可用Javascri
 
 ## 參考資料 {#參考資料}
 
-* \[1\] Solidity 
-  [http://solidity.readthedocs.io/en/latest/index.html](https://solidity.readthedocs.io/en/latest/index.html)
-* \[2\] Solidity線上編輯器　
-  [https://ethereum.github.io/browser-solidity/](https://ethereum.github.io/browser-solidity/)
-* \[3\] Truffle Framework 
-  [http://truffleframework.com/](http://truffleframework.com/)
-* \[4\] Embark Framework 
-  [https://github.com/iurimatias/embark-framework](https://github.com/iurimatias/embark-framework)
-* \[5\] ENS也使用Truffle框架 
-  [https://github.com/ethereum/ens](https://github.com/ethereum/ens)
-* \[6\] 
-  [https://github.com/ethereumjs/testrpc](https://github.com/ethereumjs/testrpc)
-* \[7\] 
-  [https://github.com/ethereumjs/ethereumjs-vm](https://github.com/ethereumjs/ethereumjs-vm)
-* \[8\] HelloWorld範例修改自 
-  [https://app.pluralsight.com/library/courses/blockchain-fundamentals/](https://app.pluralsight.com/library/courses/blockchain-fundamentals/)
-* \[9\] Truffle issue on windows 
-  [http://truffleframework.com/docs/advanced/configuration\#resolving-naming-conflicts-on-windows](http://truffleframework.com/docs/advanced/configuration#resolving-naming-conflicts-on-windows)
-* \[10\] Solidity支援的型別\(Type\) 
-  [https://solidity.readthedocs.io/en/develop/types.html](https://solidity.readthedocs.io/en/develop/types.html)
-* \[11\] Solium syntax check 
-  [https://github.com/duaraghav8/Solium](https://github.com/duaraghav8/Solium)
-* \[12\] 
-  [http://truffleframework.com/docs/getting\_started/contracts](http://truffleframework.com/docs/getting_started/contracts)
-* \[13\] Coding Style 
-  [http://solidity.readthedocs.io/en/develop/style-guide.html](https://solidity.readthedocs.io/en/develop/style-guide.html)
-
-
-
+* [1]  Truffle issue on windows http://truffleframework.com/docs/advanced/configuration#resolving-naming-conflicts-on-windows
+* [2] Solidity支援的型別\(Type\) [https://solidity.readthedocs.io/en/develop/types.html](https://solidity.readthedocs.io/en/develop/types.html)
+* [3] Solium syntax check [https://github.com/duaraghav8/Solium](https://github.com/duaraghav8/Solium)
+* [4] [http://truffleframework.com/docs/getting\_started/contracts](http://truffleframework.com/docs/getting_started/contracts)
+* [5] Coding Style [http://solidity.readthedocs.io/en/develop/style-guide.html](https://solidity.readthedocs.io/en/develop/style-guide.html)

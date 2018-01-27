@@ -8,9 +8,27 @@
 
 以太坊提供了便於交易的加密貨幣以太幣\(Ether\)，可透過智能合約解決交易上的信任問題，同時也可撰寫DAPP來提供友善的資訊彙總與操作介面，讓以太坊成為一個目前最理想的區塊鏈底層技術。
 
-## 以太幣\(Ether\)的實際用途 {#以太幣-ether-的實際用途}
+{% mermaid %}
+graph TD
+DAPP -.- DAPP瀏覽器
+DAPP瀏覽器 -.- 智能合約
+錢包 -.- 智能合約
+智能合約 --- 以太坊
+錢包 -.- 以太幣
+以太幣 --- 以太坊
+以太幣 --- 激勵機制
+以太坊 --- P2P
+以太坊 --- 共識機制
+共識機制 --- 密碼學
+P2P --- 網際網路
+分散式APP -.- ENS
+智能合約 -.- ENS
+以太幣 -.- ENS
+{% endmermaid %}
 
-在電腦上執行的一般的程式碼，寫出來可能會有迴圈不斷執行\(死迴圈\)的情況，搬到區塊鏈上亦然。那麼以太坊怎麼解決這個問題呢？以太坊開發者想到的辦法是讓執行的程式碼變得有價。EVM裡支援的所有的指令\(OPCODE\)都有[明碼標價](https://github.com/ethereum/pyethereum/blob/develop/ethereum/opcodes.py)，執行智能合約需要消耗與執行的指令數量相當的以太幣。在智能合約的術語中，這些拿來消耗的以太幣被稱為"gas"\(燃料\)。部署合約到區塊鏈上時，需要附加一定數量的燃料。當燃料消耗完而程式還沒執行完，就會出現"Out of Gas"\(燃料耗盡\)錯誤。智能合約透過這樣的方式來避免死迴圈等情況。
+## 以太幣\(Ether\)在以太坊生態中扮演的角色 {#以太幣-ether-以太坊生態中扮演的角色}
+
+在電腦上執行的一般的程式碼，寫出來可能會有迴圈不斷執行\(死迴圈\)的情況，搬到區塊鏈上亦然。那麼以太坊怎麼解決這個問題呢？以太坊開發者想到的辦法是讓執行的程式碼變得有價。以太坊虛擬機\(EVM\)裡支援的所有的指令碼\(OPCODE\)都有[明碼標價](https://github.com/ethereum/pyethereum/blob/develop/ethereum/opcodes.py)，執行智能合約需要消耗與執行的指令數量相當的以太幣。在智能合約的術語中，這些拿來消耗的以太幣被稱為"gas"\(燃料\)。此外，部署合約到區塊鏈上時，也需要附加一定數量的gas\(燃料\)作為給礦工的交易費用。當燃料消耗完而程式還沒執行完，就會出現"Out of Gas"\(燃料耗盡\)錯誤。智能合約透過這樣的方式來避免死迴圈等情況。
 
 ## 智能合約能做什麼事？ {#智能合約能做什麼事？}
 
@@ -55,6 +73,3 @@
 * Ethereum Overview 
   [http://truffleframework.com/tutorials/ethereum-overview](http://truffleframework.com/tutorials/ethereum-overview)
 * [A Prehistory of the Ethereum Protocol](http://vitalik.ca/general/2017/09/14/prehistory.html)
-
-
-

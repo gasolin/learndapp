@@ -6,7 +6,7 @@
 
 ## 加入測試
 
-接續上一篇建立的`HelloToken`合約，在`test/`目錄下加入`test_hello_token.js`測試檔案（如果覺得這份程式碼不易理解，可跳過這節，後面會介紹更簡潔的測試方法，到時再回來對照著看）。
+接續上一篇建立的`HelloToken`合約，在`test/`目錄下加入`test_hello_token.js`測試檔案（如果覺得這份程式碼不易理解，可跳過這節，後面會介紹更簡潔的測試方法，到時再回來對照著看即可）。
 
 ```js
 var HelloToken = artifacts.require('HelloToken');
