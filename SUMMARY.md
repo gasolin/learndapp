@@ -9,4 +9,5 @@
 * [建立第一個智能合約專案](create-first-smart-contract-project.md)
 * [為智能合約加入新功能](add-new-method-in-smart-contract.md)
 * [建立第一個加密代幣合約](create-a-crypto-token.md)
-
+* [建立可放到錢包的標準代幣](create-an-erc20-compatible-token.md)
+* [加入單元測試](add-unit-test.md)
