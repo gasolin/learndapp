@@ -1,4 +1,4 @@
-## 什麼是以太坊\(Ethereum\)
+# 什麼是以太坊\(Ethereum\)
 
 以太坊\(Ethereum\)是近幾年才發展起來的一種新的底層[區塊鏈](https://blog.gasolin.idv.tw/2017/08/10/what-is-blockchain/)技術。以太幣\(Ether\)是以太坊公有鏈上產生的🔒💵加密貨幣\(Crypto　Currency\)，除了可以拿來像比特幣\(Bitcoin\)一樣做交易外，還具有實際的用途。
 
@@ -50,7 +50,7 @@
   [https://github.com/ethereum/wiki/wiki](https://github.com/ethereum/wiki/wiki)
 * 挖礦教學 
   [https://www.ptt.cc/bbs/DigiCurrency/M.1495624721.A.6A8.html](https://www.ptt.cc/bbs/DigiCurrency/M.1495624721.A.6A8.html)
-* 以太坊、以太幣是什麼？ETH電腦挖礦圖文教程http://www.gooread.com/article/20122396003/
+* 以太坊、以太幣是什麼？ETH電腦挖礦圖文教程[http://www.gooread.com/article/20122396003/](http://www.gooread.com/article/20122396003/)
 * [https://github.com/vinsgo/awesome-ethereum](https://github.com/vinsgo/awesome-ethereum)
 * Ethereum Overview 
   [http://truffleframework.com/tutorials/ethereum-overview](http://truffleframework.com/tutorials/ethereum-overview)

@@ -29,18 +29,18 @@
 ## 參考資料 {#參考資料}
 
 * \[1\] 比特幣 
-  [https://zh.wikipedia.org/wiki/比特币](https://zh.wikipedia.org/wiki/%E6%AF%94%E7%89%B9%E5%B8%81)
+  [https://zh.wikipedia.org/wiki/比特币](https://zh.wikipedia.org/wiki/比特币)
 * \[2\] 以太坊 
-  [https://zh.wikipedia.org/wiki/以太坊](https://zh.wikipedia.org/wiki/%E4%BB%A5%E5%A4%AA%E5%9D%8A)
+  [https://zh.wikipedia.org/wiki/以太坊](https://zh.wikipedia.org/wiki/以太坊)
 * \[3\] 首次公開發行加密代幣 
-  [https://zh.wikipedia.org/wiki/首次代币发售](https://zh.wikipedia.org/wiki/%E9%A6%96%E6%AC%A1%E4%BB%A3%E5%B8%81%E5%8F%91%E5%94%AE)
-* \[4\] 區塊鏈https://zh.wikipedia.org/wiki/%E5%8C%BA%E5%9D%97%E9%93%BE
+  [https://zh.wikipedia.org/wiki/首次代币发售](https://zh.wikipedia.org/wiki/首次代币发售)
+* \[4\] 區塊鏈[https://zh.wikipedia.org/wiki/区块链](https://zh.wikipedia.org/wiki/区块链)
 * \[5\] Napster 
   [https://en.wikipedia.org/wiki/Napster](https://en.wikipedia.org/wiki/Napster)
 * \[6\] BitTorrent 
   [https://en.wikipedia.org/wiki/BitTorrent](https://en.wikipedia.org/wiki/BitTorrent)
 * \[7\] 磁力連結 
-  [https://zh.wikipedia.org/wiki/磁力链接](https://zh.wikipedia.org/wiki/%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5)
+  [https://zh.wikipedia.org/wiki/磁力链接](https://zh.wikipedia.org/wiki/磁力链接)
 * \[8\] [What Are Magnet Links, and How Do I Use Them to Download Torrents?](https://lifehacker.com/5875899/what-are-magnet-links-and-how-do-i-use-them-to-download-torrents)
 * \[9\] [https://www.hyperledger.org/](https://www.hyperledger.org/)
 * \[10\] [https://entethalliance.org/](https://entethalliance.org/)
