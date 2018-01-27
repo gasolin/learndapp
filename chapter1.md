@@ -34,7 +34,14 @@
 
 一般的應用程式改版時可透過安裝新版程式，網頁應用程式也可透過部署新版程式達成，而智能合約一旦部署到區塊鏈上後，就無法更改這個智能合約。當然聰明的開發者透過加入額外的智能合約，也已有辦法繞過智能合約部署後無法再更改的限制。
 
-##  {#如何撰寫智能合約？}
+## 參考資料 {#參考資料}
+
+* \[1\] ERC20 
+  [https://theethereum.wiki/w/index.php/ERC20\_Token\_Standard](https://theethereum.wiki/w/index.php/ERC20_Token_Standard)
+* \[2\] Solidity 
+  [http://solidity.readthedocs.io/en/latest/index.html](https://solidity.readthedocs.io/en/latest/index.html)
+* \[3\] migration contracts 
+  [http://truffleframework.com/docs/getting\_started/migrations](http://truffleframework.com/docs/getting_started/migrations)
 
 
 
