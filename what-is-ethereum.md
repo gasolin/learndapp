@@ -1,16 +1,18 @@
 # 什麼是以太坊\(Ethereum\)
 
-以太坊\(Ethereum\)是近幾年才發展起來的一種新的底層[區塊鏈](https://blog.gasolin.idv.tw/2017/08/10/what-is-blockchain/)技術。以太幣\(Ether\)是以太坊公有鏈上產生的🔒💵加密貨幣\(Crypto　Currency\)，除了可以拿來像比特幣\(Bitcoin\)一樣做交易外，還具有實際的用途。
+以太坊\(Ethereum\)是2015年才發展起來的一種新的底層[區塊鏈](https://blog.gasolin.idv.tw/2017/08/10/what-is-blockchain/)技術。以太幣\(Ether\)是以太坊公有鏈上產生的🔒💵加密貨幣\(Crypto　Currency\)，除了可以拿來像比特幣\(Bitcoin\)一樣做交易外，還具有實際的用途。
 
-以太坊和比特幣一樣是基於P2P網路與密碼學建立起的區塊鏈機制，不同之處是，以太坊在每個運作的節點上都運行著一個以太坊虛擬機\(Ethereum Virtual Machine, EVM\)，可以用來執行完整的程式。這些程式在以太坊中被稱為⚖📒**智能合約**\(Smart Contract\)。智能合約除了可以處理資料，還內建轉帳功能，可以很容易地透過智能合約來交易加密貨幣。由於智能合約可在每個以太坊的節點上執行並進行驗證，所以計算結果被認為是可信任的。以太坊還開發出了[web3.js](https://github.com/ethereum/wiki/wiki/JavaScript-API)讓開發者可以使用網頁技術撰寫智能合約的操作介面。這樣的網頁操作介面又稱為🕸🅰**分散式應用程式**\(DAPP\)。要使用DAPP，必須在支援DAPP的瀏覽器中才能使用\(如[Mist](https://github.com/ethereum/mist/releases)或[Parity](https://parity.io/)\)。
+以太坊和比特幣一樣是基於P2P網路與密碼學建立起的區塊鏈機制，不同之處是，以太坊在每個運作的節點上都運行著一個以太坊虛擬機\(Ethereum Virtual Machine, EVM\)，可以用來執行完整的程式。這些程式在以太坊中被稱為⚖📒**智能合約**\(Smart Contract\)。
+
+智能合約除了可以處理資料，還內建轉帳功能，可以很容易地透過智能合約來交易加密貨幣。由於智能合約可在每個以太坊的節點上執行並進行驗證，所以計算結果被認為是可信任的。以太坊還開發出了[web3.js](https://github.com/ethereum/wiki/wiki/JavaScript-API)讓開發者可以使用網頁技術撰寫智能合約的操作介面。這樣的網頁操作介面又稱為🕸🅰**分散式應用程式**\(DAPP\)。目前DAPP必須在支援DAPP的瀏覽器中才能使用\(如[Mist](https://github.com/ethereum/mist/releases)或[Parity](https://parity.io/)\)，或透過安裝[Metamask](http://metamask.io/)瀏覽器插件在桌面瀏覽器上使用。
 
 使用智能合約技術製作的服務，也構成了以太坊生態圈的一環。例如[Ethereum Name Service\(ENS\)](https://blog.gasolin.idv.tw/2017/08/13/got-my-ens-domain/)就提供了讓使用者更容易尋找到轉帳對象、智能合約，和DAPP的方式。
 
-以太坊提供了便於交易的加密貨幣以太幣\(Ether\)，可透過智能合約解決交易上的信任問題，同時也可撰寫DAPP來提供友善的資訊彙總與操作介面，讓以太坊成為一個目前最理想的區塊鏈底層技術。
+以太坊提供了便於交易的加密貨幣**以太幣\(Ether\)**，可透過智能合約解決交易上的信任問題，同時也可撰寫DAPP來提供友善的資訊彙總與操作介面，讓以太坊成為一個目前最理想的區塊鏈底層技術。
 
 {% mermaid %}
 graph TD
-DAPP -.- DAPP瀏覽器
+分散式APP -.- DAPP瀏覽器
 DAPP瀏覽器 -.- 智能合約
 錢包 -.- 智能合約
 智能合約 --- 以太坊
@@ -28,7 +30,7 @@ P2P --- 網際網路
 
 ## 以太幣\(Ether\)在以太坊生態中扮演的角色 {#以太幣-ether-以太坊生態中扮演的角色}
 
-在電腦上執行的一般的程式碼，寫出來可能會有迴圈不斷執行\(死迴圈\)的情況，搬到區塊鏈上亦然。那麼以太坊怎麼解決這個問題呢？以太坊開發者想到的辦法是讓執行的程式碼變得有價。以太坊虛擬機\(EVM\)裡支援的所有的指令碼\(OPCODE\)都有[明碼標價](https://github.com/ethereum/pyethereum/blob/develop/ethereum/opcodes.py)，執行智能合約需要消耗與執行的指令數量相當的以太幣。在智能合約的術語中，這些拿來消耗的以太幣被稱為"gas"\(燃料\)。此外，部署合約到區塊鏈上時，也需要附加一定數量的gas\(燃料\)作為給礦工的交易費用。當燃料消耗完而程式還沒執行完，就會出現"Out of Gas"\(燃料耗盡\)錯誤。智能合約透過這樣的方式來避免死迴圈等情況。
+在電腦上執行的一般的程式碼，寫出來可能會有迴圈不斷執行\(死迴圈\)的情況，搬到區塊鏈上亦然。那麼以太坊怎麼解決這個問題呢？以太坊開發者想到的辦法，是讓執行每段程式碼都有代價。以太坊虛擬機\(EVM\)裡支援的所有的指令碼\(OPCODE\)都有[明碼標價](https://github.com/ethereum/pyethereum/blob/develop/ethereum/opcodes.py)，執行智能合約需要消耗與執行的指令數量相當的以太幣。在智能合約的術語中，這些拿來消耗的以太幣被稱為"gas"\(燃料\)。此外，部署合約到區塊鏈上時，也需要附加一定數量的gas\(燃料\)作為給礦工的交易費用。當燃料消耗完而程式還沒執行完，就會出現"Out of Gas"\(燃料耗盡\)錯誤。智能合約透過這樣的方式來避免死迴圈等情況。
 
 ## 智能合約能做什麼事？ {#智能合約能做什麼事？}
 
@@ -52,11 +54,13 @@ P2P --- 網際網路
 
 ## 以太坊的缺點 {#以太坊的缺點}
 
-目前以太坊區塊鏈的速度和電腦執行速度無法相比，不適合快速交易，或是需要儲存較大資料的情境。近期的[plasma](http://www.investopedia.com/news/what-plasma-and-how-will-it-strengthen-ethereum-blockchain/)提案有望解決快速交易的問題。
+目前以太坊區塊鏈的速度和電腦執行速度無法相比，不適合快速交易，或是需要儲存較大資料的情境。
 
-因為缺乏即時調控區塊大小的手段，在一些很熱門的交易時段\(如某些熱門的ICO開放認購時\)，整個網路的交易延遲會變地很長。
+此外，因為缺乏即時調控區塊大小的手段，在一些很熱門的交易時段\(如某些熱門的ICO開放認購時\)，整個網路的交易延遲會變地很長。
 
-智能合約一經部署就永遠存在，除非擁有者啟動智能合約中的自毀\(selfdestruct\)功能。如何升級合約並保存其中的參數與代幣，是一個值得探討的課題。
+近期的[plasma](http://www.investopedia.com/news/what-plasma-and-how-will-it-strengthen-ethereum-blockchain/)，分片(Sharding)，或改採用PoS(Prove of Stake)等提案，都有望進一步解決快速交易的問題。
+
+智能合約一經部署就永遠存在，除非擁有者啟動智能合約中的自毀\(selfdestruct\)功能。如何升級合約並保存其中的參數與代幣，也是值得探討的課題。
 
 以太坊網路節點上並不適合儲存較大的檔案。目前有[Swarm](https://github.com/ethersphere/swarm)與[IPFS](https://ipfs.io/)等分散式檔案儲存方式可供選擇。
 
