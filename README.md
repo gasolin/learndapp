@@ -2,12 +2,16 @@
 
 本書介紹了基於乙太坊的智能合約\(Smart Contract\)和分散式網頁應用\(DApp\)。
 
+## 作者簡介
 
-如果喜歡本書，歡迎打賞(接受各種Ethereum代幣)激勵我快點寫下去
+gasolin（蓋索林）, 開源愛好者，樂於學習與分享Web與移動應用相關技術。著有「Google! Android 手機應用程式設計入門」等[多本著作](https://gasolin.idv.tw/portfolio#books)。
 
-[![](https://img.shields.io/badge/⚡️-Tip_Me-brightgreen.svg)](https://gitcoin.co/tip?username=gasolin)
+* 部落格：http://blog.gasolin.idv.tw/
+* 個人網站：https://gasolin.idv.tw/
 
 ### 當前完成度：20%
+
+目前內容主要整理自已發表於部落格的文章，若已看過部落格文章，可以先將本書加入書籤，稍後有新內容再來查看。
 
 ### 更新紀錄
 
