@@ -24,7 +24,7 @@ P2P --- 網際網路
 
 區塊鏈不僅只是加密貨幣，透過區塊鏈，我們可以和各地的人做生意，用很低的手續費在不同國家收款與匯款\(都在同一個公開區塊鏈上\)，而且幾分鐘內就可到帳；交易的過程中，所有的合約都由網路上的節點自動執行\(智能合約 Smart Contract\)，可以避免人為操縱與詐欺等潛在的信任問題，讓人們可以更安心地交易；未來還可以透過瀏覽器使用智能合約，就像使用網站一樣容易\(分散式應用 DAPP\)。
 
-暢想未來的商業模型，可能是商家透過易用的DAPP提供資訊，顧客與商家經過可信任的智能合約，透過代幣快速交換價值與服務。
+暢想未來的商業模型，可能是顧客透過易用的手機或網頁DAPP取得商家提供的資訊，經由可信任的智能合約，讓彼此能快速地交換價值與服務。
 
 ## 聯盟鏈 {#聯盟鏈}
 
@@ -34,7 +34,7 @@ P2P --- 網際網路
 
 ## 區塊鏈用到的加密技術 {#區塊鏈用到的加密技術}
 
-可以在Youtube上查看 [Blockchain 101 - A Visual Demo](https://youtu.be/_160oMzblY8)影片[^14]，或前往對應的[Block Chain Demo網站](https://anders.com/blockchain/)[15](https://blog.gasolin.idv.tw/2017/08/10/what-is-blockchain/#fn:15)自行動手試驗。
+可以在Youtube上查看 [Blockchain 101 - A Visual Demo](https://youtu.be/_160oMzblY8)影片[^14]，或前往對應的[Block Chain Demo網站](https://anders.com/blockchain/)[^15]自行動手試驗。
 
 ## 參考資料 {#參考資料}
 
