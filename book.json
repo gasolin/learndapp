@@ -1,5 +1,5 @@
 {
-    "plugins": ["mermaid-gb3", "chart"],
+    "plugins": ["mermaid", "chart"],
     "pluginsConfig": {
         "chart": {
             "type": "c3"
