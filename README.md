@@ -15,4 +15,5 @@ gasolin（蓋索林）, 開源愛好者，樂於學習與分享Web與移動應�
 
 ### 更新紀錄
 
+* 2018/1/29 加入「[使用MetaMask錢包收送乙太幣](howto-send-ether-from-wallet)」一章
 * 2018/1/28 發布

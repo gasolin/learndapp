@@ -14,4 +14,5 @@
     - [建立可放到錢包的標準代幣](create-an-erc20-compatible-token.md)
     - [加入單元測試](add-unit-test.md)
 * [DApp](dapp.md)
+   - [使用MetaMask錢包收送乙太幣](howto-send-ether-from-wallet.md)
    - [Ethereum Name Service應用](ens.md)
