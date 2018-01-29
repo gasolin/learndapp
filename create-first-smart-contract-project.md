@@ -10,7 +10,7 @@ $ truffle init
 
 如此一來，我們已建立好第一份智能合約專案了。
 
-在`demo/`資料夾下，可以看到`contracts/`資料夾，裡面放的是這個專案所包含的所有solidity程式。我們在`contracts/`資料夾中額外建立一個`HelloWorld.sol`檔案。（或者也可以用`truffle create contract HelloWorld`命令來建立）
+在`hello/`資料夾下，可以看到`contracts/`資料夾，裡面放的是這個專案所包含的所有solidity程式。我們在`contracts/`資料夾中額外建立一個`HelloWorld.sol`檔案。（或者也可以用`truffle create contract HelloWorld`命令來建立）
 
 `HelloWorld.sol`檔案內容如下：
 
@@ -36,7 +36,7 @@ pragma solidity ^0.4.11;
 
 ```sh
 $ truffle version
-Truffle v4.0.1 (core: 4.0.1)
+Truffle v4.0.5 (core: 4.0.5)
 Solidity v0.4.18 (solc-js)
 ```
 
