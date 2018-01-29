@@ -37,6 +37,8 @@ P2P --- 網際網路
 
 可以在Youtube上查看 [Blockchain 101 - A Visual Demo](https://youtu.be/_160oMzblY8)影片[^14]，或前往對應的[Block Chain Demo網站](https://anders.com/blockchain/)[^15]動手試驗。
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_160oMzblY8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## 參考資料 {#參考資料}
 
 * [1] 比特幣 [https://zh.wikipedia.org/wiki/比特币](https://zh.wikipedia.org/wiki/比特币)
