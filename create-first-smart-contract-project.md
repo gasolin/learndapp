@@ -178,3 +178,4 @@ HelloWorld.deployed().then(function(instance) {
 * [3] Solium syntax check [https://github.com/duaraghav8/Solium](https://github.com/duaraghav8/Solium)
 * [4] [http://truffleframework.com/docs/getting\_started/contracts](http://truffleframework.com/docs/getting_started/contracts)
 * [5] Coding Style [http://solidity.readthedocs.io/en/develop/style-guide.html](https://solidity.readthedocs.io/en/develop/style-guide.html)
+* [6] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello

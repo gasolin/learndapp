@@ -89,3 +89,4 @@ truffle(develop)> contract.sayHello.call()
 ## 參考資料
 
 * [1] HelloWorld範例修改自 https://app.pluralsight.com/library/courses/blockchain-fundamentals/
+* [2] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello

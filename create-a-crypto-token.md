@@ -121,7 +121,7 @@ graph LR
 
 ### 編譯與部署
 
-在`migrations/`目錄下建立一個`3_deploy_token.js`檔案，內容如下：
+在`migrations/`目錄下建立一個`3_deploy_simple_token.js`檔案，內容如下：
 
 ```js
 var SimpleToken = artifacts.require("SimpleToken");
@@ -129,6 +129,7 @@ var SimpleToken = artifacts.require("SimpleToken");
 module.exports = function(deployer) {
   deployer.deploy(SimpleToken);
 };
+
 ```
 
 現在可執行compile與migrate命令
@@ -225,7 +226,8 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 
 ## 結語
 
-看完這篇除了學到本篇講解的`SimpleToken`外，應該也可以大致看得懂truffle預設的`MetaCoin.sol`合約了。不同的細節可以查看solidity相關語法[^2]。
+看完這篇除了學到本篇講解的`SimpleToken`外，應該也可以大致看得懂truffle預設的`MetaCoin.sol`合約了（在truffle 4.x之後，MetaCoin已經從專案建立後的預設範例中移出了，但仍可以在新增專案時透過`truffle unbox metacoin`命令取得）。不同的細節可以查看solidity相關語法[^2]。
+
 下一篇會接著介紹如何使用經過驗證的函式庫，來建立一份可以放到乙太幣錢包👛的加密代幣🔒💵合約。
 
 ## 參考資料
@@ -235,3 +237,4 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 * [3] An Ethereum Hello World Smart Contract for Beginners [part 1](http://www.talkcrypto.org/blog/2017/04/17/an-ethereum-hello-world-smart-contract-for-beginners-part-1/), [part 2](http://www.talkcrypto.org/blog/2017/04/22/an-ethereum-hello-world-smart-contract-for-beginners-part-2/)
 * [4] Onward with Ethereum Smart Contract Security https://blog.zeppelin.solutions/onward-with-ethereum-smart-contract-security-97a827e47702
 * [5] Ethereum Contract Security Techniques and Tips https://github.com/ConsenSys/smart-contract-best-practices
+* [6] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_simple_token
