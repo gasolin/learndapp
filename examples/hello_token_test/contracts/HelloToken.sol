@@ -7,6 +7,9 @@ contract HelloToken is StandardToken {
   uint8 public decimals = 2;
   uint256 public INITIAL_SUPPLY = 88888;
 
+  // uint256 public totalSupply;
+  // mapping(address => uint256) balances;
+
   function HelloToken() public {
     totalSupply_ = INITIAL_SUPPLY;
     balances[msg.sender] = INITIAL_SUPPLY;

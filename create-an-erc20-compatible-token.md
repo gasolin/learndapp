@@ -57,7 +57,7 @@ $ truffle create contract HelloToken
 
 ```
 pragma solidity ^0.4.11;
-import "zeppelin-solidity/contracts/token/StandardToken.sol";
+import "zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 
 contract HelloToken is StandardToken {
   string public name = "HelloCoin";
@@ -66,7 +66,7 @@ contract HelloToken is StandardToken {
   uint256 public INITIAL_SUPPLY = 88888;
 
   function HelloToken() public {
-    totalSupply = INITIAL_SUPPLY;
+    totalSupply_ = INITIAL_SUPPLY;
     balances[msg.sender] = INITIAL_SUPPLY;
   }
 }
@@ -93,7 +93,7 @@ contract HelloToken is StandardToken {
 
 建立`HelloToken`合約時，使用`is`語句繼承了[StandardToken](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/StandardToken.sol)合約。因此`HelloToken`合約繼承了`StandardToken`合約所包含的資料與呼叫方法。
 
-當我們繼承了`StandardToken`合約，也就支援了以下 ERC-20 標準中[^2]規定的函式
+當我們繼承了`StandardToken`合約，也就支援了以下ERC-20標準中[^2]規定的函式
 
 | 函式 | 描述 |
 | ------------- | ------------- |
@@ -130,20 +130,22 @@ uint256 public INITIAL_SUPPLY = 100000;
 
 ```
 function HelloToken() public {
-  totalSupply = INITIAL_SUPPLY;
+  totalSupply_ = INITIAL_SUPPLY;
   balances[msg.sender] = INITIAL_SUPPLY;
 }
 ```
 
 和合約同名的`HelloToken`方法，就是`HelloToken`合約的建構函式(constructor)。
-在建構式裡指定了`totalSupply`數目，並將所有的初始代幣`INITIAL_SUPPLY`都指定給`msg.sender`帳號，也就是用來部署這個合約的帳號。‵`totalSupply`定義於[ERC20Basic.sol](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20Basic.sol#L10)中，`balances`定義於[BasicToken.sol](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/BasicToken.sol#L15)中。
+在建構式裡指定了`totalSupply_`數目，並將所有的初始代幣`INITIAL_SUPPLY`都指定給`msg.sender`帳號，也就是用來部署這個合約的帳號。‵`totalSupply_`與`balances`都定義於[BasicToken.sol](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/BasicToken.sol)中。
 
 ```
+import "./ERC20Basic.sol";
 import '../math/SafeMath.sol';
 ...
 using SafeMath for uint256;
-...
-balances[msg.sender] = balances[msg.sender].sub(_value);
+
+mapping(address => uint256) balances;
+uint256 totalSupply_;
 ```
 
 進一步追去看[BasicToken.sol](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/BasicToken.sol)合約的內容，可以發現`BasicToken.sol`合約中匯入了`SafeMath.sol`合約[^7]。`SafeMath`對各種數值運算加入了必要的驗證，讓合約中的數字計算更安全。

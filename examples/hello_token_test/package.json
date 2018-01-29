@@ -1,0 +1,8 @@
+{
+  "name": "hellotoken",
+  "version": "1.0.0",
+  "description": "hello token example",
+  "dependencies": {
+    "zeppelin-solidity": "^1.6.0"
+  }
+}

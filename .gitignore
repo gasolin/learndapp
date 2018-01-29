@@ -6,6 +6,7 @@
 ## Commenting this out is preferred by some people, see
 ## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
 node_modules
+**/**/package-lock.json
 
 # Book build output
 _book
@@ -19,3 +20,4 @@ _book
 examples/hello/build/
 examples/hello_simple_token/build/
 examples/hello_standard_token/build/
+examples/hello_token_test/build/

@@ -11,7 +11,7 @@
 ```js
 var HelloToken = artifacts.require('HelloToken');
 
-const INITIAL_SUPPLY = 100000;
+const INITIAL_SUPPLY = 88888;
 let _totalSupply;
 
 contract('HelloToken', function(accounts) {
@@ -88,20 +88,20 @@ assert.equal(_totalSupply.toNumber(), senderBalance.toNumber());
 
 有的！2017下半年，Javascript 語言支援了`async/await`語句[2]（只要安裝Node 7.6版以上即可使用），可以用更直覺的方式撰寫非同步的程式碼。
 
-智能合約測試剛好也使用大量的非同步程式碼。使用`async/await`語句改寫後的智能合約測試程式碼如下：
+智能合約測試剛好也使用大量的非同步程式碼。在`test/`目錄下加入`test_hello_token_async.js`測試檔案。使用`async/await`語句改寫後的智能合約測試程式碼如下：
 
 ```js
 var HelloToken = artifacts.require('HelloToken');
 
-const INITIAL_SUPPLY = 100000;
+const INITIAL_SUPPLY = 88888;
 
-contract('HelloToken', function(accounts) {
+contract('HelloToken Async', function(accounts) {
   it('should met initial supply', async function() {
     let contract = await HelloToken.deployed();
     let totalSupply = await contract.totalSupply.call();
     let senderBalance = await contract.balanceOf(accounts[0]);
     assert.equal(totalSupply.toNumber(), INITIAL_SUPPLY);
-    assert.equal(totalSupply.toNumber(), senderBalance.toNumbe());
+    assert.equal(totalSupply.toNumber(), senderBalance.toNumber());
   });
 });
 ```
@@ -109,10 +109,14 @@ contract('HelloToken', function(accounts) {
 運行`truffle test`可看到測試通過的結果。
 
 ```sh
-Contract: HelloToken
+  Contract: HelloToken
     ✓ should met initial supply
 
-1 passing (11ms)
+  Contract: HelloToken Async
+    ✓ should met initial supply (67ms)
+
+
+  2 passing (149ms)
 ```
 
 ### 講解
@@ -136,7 +140,7 @@ let senderBalance = await contract.balanceOf(accounts[0]);
 
 ## 加入轉帳測試
 
-再透過`async/await`語句試著加入轉帳測試：
+再透過`async/await`語句，試著加入轉帳測試：
 
 ```js
   it('should have right balance after transfer', async function() {
@@ -159,11 +163,15 @@ let senderBalance = await contract.balanceOf(accounts[0]);
 運行`truffle test`可看到測試通過的結果。
 
 ```
-Contract: HelloToken
+  Contract: HelloToken
     ✓ should met initial supply
-    ✓ should have right balance after transfer (92ms)
 
-2 passing (151ms)
+  Contract: HelloToken Async
+    ✓ should met initial supply (101ms)
+    ✓ should have right balance after transfer (276ms)
+
+
+  3 passing (506ms)
 ```
 
 ### 講解
@@ -201,3 +209,4 @@ assert.equal(account1Balance.toNumber(), AMOUNT);
 
 [1] Writing Tests in Javascript http://truffleframework.com/docs/getting_started/javascript-tests
 [2] 6 Reasons Why JavaScript’s Async/Await Blows Promises Away (Tutorial)https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9
+[3] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_token_test
