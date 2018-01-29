@@ -207,6 +207,6 @@ assert.equal(account1Balance.toNumber(), AMOUNT);
 
 # 參考資料
 
-[1] Writing Tests in Javascript http://truffleframework.com/docs/getting_started/javascript-tests
-[2] 6 Reasons Why JavaScript’s Async/Await Blows Promises Away (Tutorial)https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9
-[3] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_token_test
+* [1] Writing Tests in Javascript http://truffleframework.com/docs/getting_started/javascript-tests
+* [2] 6 Reasons Why JavaScript’s Async/Await Blows Promises Away (Tutorial)https://hackernoon.com/6-reasons-why-javascripts-async-await-blows-promises-away-tutorial-c7ec10518dd9
+* [3] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_token_test
