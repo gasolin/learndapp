@@ -3,6 +3,21 @@
     "pluginsConfig": {
         "chart": {
             "type": "c3"
+        },
+        "rss": {
+            "title": "Ethereum智能合約與DApp入門",
+            "description": "Ethereum區塊鏈！智能合約(Smart Contract)與分散式網頁應用(DApp)入門",
+            "author": "蓋索林",
+            "site_url": "https://gasolin.gitbooks.io/learn-ethereum-dapp/",
+            "managingEditor": "gasolin+gitbook@gmail.com (gasolin)",
+            "webMaster": "gasolin+gitbook@gmail.com (gasolin)",
+            "categories": [
+              "ethereum",
+              "solidity",
+              "dapp",
+              "book",
+              "gitbook"
+            ]
         }
     }
 }
