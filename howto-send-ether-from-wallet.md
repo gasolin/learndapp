@@ -75,13 +75,22 @@ bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
 
 ## 使用MetaMask錢包查看自製代幣
 
-我們已經建立了相容ERC20的 `HelloToken`代幣合約，現在來驗證是否真的能在一般的錢包中收送我們的代幣。
+我們已經建立了相容ERC20的 `HelloToken`代幣合約，現在來驗證是否真的能在一般的錢包中查看我們的代幣。
 
-要查看也不困難，首先打開MetaMask並切換到「TOKENS」分頁
+要查看也不困難，首先打開MetaMask並切換到「TOKENS」分頁，按下`ADD TOKEN`(加入代幣)按鈕
 
 ![Imgur](https://i.imgur.com/8tOA5Fu.png)
 
-從`truffle migrate`命令中找出`HelloToken`合約部署到本地測試網路的地址，然後填入`Token Contract Address`（代幣合約地址）欄位，其他欄位會自動填入。
+從執行`truffle migrate`命令的紀錄中找出`HelloToken`合約部署到本地測試網路的地址(最後一行HelloToken後的地址，每次部署應該都會不一樣)。
+
+```
+Running migration: 4_deploy_hellotoken.js
+  Deploying HelloToken...
+  ... 0xc9a83dc4f03942ac6dd679a461aaf00a8e819cb61a3e69028114558ebd542886
+  HelloToken: 0x0b2353191e7705b26a76d5222127a22a9c31e6bb
+```
+
+然後填入`Token Contract Address`（代幣合約地址）欄位，其他欄位會自動填入。
 
 ![Imgur](https://i.imgur.com/vlCrhIz.png)
 
@@ -89,7 +98,7 @@ bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
 
 ![Imgur](https://i.imgur.com/cZD3rF5.png)
 
-那麼要如何收送各種代幣呢？這就要靠即將開始介紹的DApp了。
+現在我們能在MetaMask中查看自製的代幣了。那麼要如何收送各種代幣呢？這就要靠即將介紹的DApp了。
 
 ## 參考資料
 
