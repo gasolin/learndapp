@@ -9,6 +9,7 @@
             "description": "Ethereum區塊鏈！智能合約(Smart Contract)與分散式網頁應用(DApp)入門",
             "author": "蓋索林",
             "site_url": "https://gasolin.gitbooks.io/learn-ethereum-dapp/",
+            "feed_url": "https://gasolin.gitbooks.io/learn-ethereum-dapp/feed",
             "managingEditor": "gasolin+gitbook@gmail.com (gasolin)",
             "webMaster": "gasolin+gitbook@gmail.com (gasolin)",
             "categories": [
