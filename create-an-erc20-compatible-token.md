@@ -242,3 +242,4 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 * [5] An Ethereum Hello World Smart Contract for Beginners part 1 http://www.talkcrypto.org/blog/2017/04/17/an-ethereum-hello-world-smart-contract-for-beginners-part-1/
 * [6] http://www.talkcrypto.org/blog/2017/04/22/an-ethereum-hello-world-smart-contract-for-beginners-part-2/
 * [7] OpenZeppelin [SafeMath 合約](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/math/SafeMath.sol) 
+* [8] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_standard_token

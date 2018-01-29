@@ -18,3 +18,4 @@ _book
 # example
 examples/hello/build/
 examples/hello_simple_token/build/
+examples/hello_standard_token/build/
