@@ -63,9 +63,9 @@ $ npm install http-server -g
     <head>
         <meta charset = "utf-8">
         <title>Hello Web3</title>
-        <script type="text/javascript" src="node_modules/web3/dist/web3.js"></script>
+        <script type="text/javascript" src="node_modules/web3/dist/web3.min.js"></script>
         <script type="text/javascript">
-          var web3 = new Web3("http://127.0.0.1:8545");
+          var web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:8545");
 
           async function start() {
             try {
@@ -107,13 +107,19 @@ $ http-server .
 這邊假設讀者已具備HTML與Javascript的基礎知識，因此只挑重點說明，不再一一講解。
 
 ```html
-<script type="text/javascript" src="node_modules/web3/dist/web3.js"></script>
+<script type="text/javascript" src="node_modules/web3/dist/web3.min.js"></script>
 ```
 
 這行引用了`web3.js`函式庫。
 
   寫作時使用npm install web3下載的函式庫中並未包含dist/目錄[^1]，我已送patch去修復這個問題。
   在修復之前，讀者可以先到[github](https://github.com/ethereum/web3.js/blob/develop/dist/web3.js)下載檔案，並將web3.js將放到`node_modules/web3/dist/`目錄下。
+
+```js
+var web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:8545");
+```
+
+我們這邊透過`web3.js`函式庫提供的`Web3`來建立與區塊鏈網路的連線。不同的DApp瀏覽器會填入不同的Provider，若`Web3.givenProvider `的值為`null`，就會改為建立與本地網(`http://127.0.0.1:8545`)的連線。
 
 ```js
 window.addEventListener("load", start);
@@ -148,7 +154,11 @@ html_account.textContent = defaultAccount;
 html_balance.textContent = web3.utils.fromWei(balance, "ether");
 ```
 
-把查詢結果顯示到網頁上。[web3.utils.fromWei](http://web3js.readthedocs.io/en/1.0/web3-utils.html#fromwei)能將乙太幣從預設的最小單位(wei)轉換成指定的單位(ether)來顯示。
+這段程式的作用是將查詢結果顯示到網頁上。[web3.utils.fromWei](http://web3js.readthedocs.io/en/1.0/web3-utils.html#fromwei)能將乙太幣從預設的最小單位(wei)轉換成指定的單位(ether)來顯示。
+
+你可以再試試看，在MetaＭask中從測試網路切換回`Main Network`，看看帳戶地址跟以太幣餘額是不是都能正常顯示。
+
+恭喜！我們完成了第一個DApp！
 
 ## 參考資料
 
