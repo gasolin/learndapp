@@ -11,7 +11,7 @@ graph LR
 
 而分散式網頁應用同樣是由網頁伺服器端「下載」網頁應用，但卻是透過API和區塊鏈上的智能合約溝通（當然也仍然可以和網頁伺服器端程式溝通）。和區塊鏈上的智能合約溝通的過程稱為`transaction` (交易）。
 
-和一般網頁上呼叫API的不同之處，在於操作一般網頁API往往使用的是明碼的網址，而與智能合約交易的過程中，所有的資料都要再經由個人加密金鑰加密過。為了簡化這個步驟，可以透過使用加密代幣錢包來產生可與智能合約交易的加密資訊。
+和一般網頁上呼叫API的不同之處，在於操作一般網頁API往往使用的是明碼的網址，而與智能合約交易的過程中，所有的資料都要再經由個人加密金鑰加密過。為了簡化這個步驟，可以透過使用加密代幣錢包來產生可與智能合約交易的加密資訊(並提供以太幣作為手續費)。
 
 {% mermaid %}
 graph LR
@@ -24,6 +24,6 @@ DApp --- 瀏覽器
 
 ## DApp如何與智能合約溝通?
 
-要和智能合約溝通，可以透過在網頁端引入[Web3.js](https://github.com/ethereum/wiki/wiki/JavaScript-API)或[ether.js](https://docs.ethers.io/ethers.js/html/)函式庫。
+要和智能合約溝通，可以透過在網頁端引入[Web3.js](https://github.com/ethereum/wiki/wiki/JavaScript-API)或[ether.js](https://docs.ethers.io/ethers.js/html/)函式庫。MetaMask錢包或支援DApp的瀏覽器，會在網頁中自動嵌入`web3.js`。
 
 接下來將使用常見的`Web3`函式庫。DApp可以透過`Web3`函式庫來操作以太坊相關的加密貨幣帳號與智慧合約。

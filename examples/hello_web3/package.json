@@ -1,0 +1,8 @@
+{
+  "name": "helloweb3",
+  "version": "1.0.0",
+  "description": "hello web3 example",
+  "dependencies": {
+    "web3": "^1.0.0-beta.29"
+  }
+}

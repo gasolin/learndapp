@@ -21,3 +21,5 @@ examples/hello/build/
 examples/hello_simple_token/build/
 examples/hello_standard_token/build/
 examples/hello_token_test/build/
+examples/hello_web3/build/
+examples/hello_webpack/build/
