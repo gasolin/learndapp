@@ -148,7 +148,7 @@ html_account.textContent = defaultAccount;
 html_balance.textContent = web3.utils.fromWei(balance, "ether");
 ```
 
-把查詢結果顯示到網頁上。[web3.utils.fromWei](http://web3js.readthedocs.io/en/1.0/web3-utils.html#fromwei)
+把查詢結果顯示到網頁上。[web3.utils.fromWei](http://web3js.readthedocs.io/en/1.0/web3-utils.html#fromwei)能將乙太幣從預設的最小單位(wei)轉換成指定的單位(ether)來顯示。
 
 ## 參考資料
 
