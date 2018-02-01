@@ -17,4 +17,7 @@
    - [分散式網頁應用(DApp)是什麼](what-is-dapp.md)
    - [使用MetaMask錢包收送乙太幣](howto-send-ether-from-wallet.md)
    - [建立第一個DApp](create-first-dapp.md)
+   -  [使用webpack編譯DApp](dapp_with_webpack.md)
+   - 存取本地測試網路上的合約
+   - 存取公開網路上的合約
    - [Ethereum Name Service應用](ens.md)
