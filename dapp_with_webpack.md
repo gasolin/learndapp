@@ -40,6 +40,12 @@ webpack output is served from /
 
 ![Imgur](https://i.imgur.com/91KBMJh.png)
 
+試試看配合MetaMask操作看看吧，當你在網頁介面上填入目的`帳戶地址`跟`MetaCoin轉出數目`後，MetaMask會被呼叫起來，在MetaMask上選擇同意交易後，這個帳號所擁有的`MetaCoin`數目就改變了。
+
+## HelloToken
+
+我們來將`MetaCoin`合約改成`HelloToken`合約，並對網頁做相應的修改以驗證。
+
 TODO..待續
 
 ## 參考資料
