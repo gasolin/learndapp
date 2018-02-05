@@ -1,6 +1,6 @@
 # 使用Webpack編譯DApp
 
-用純HTML5手刻DApp固然可行，但更多的網頁開發者會選擇使用諸如`Webpack`等編譯工具來提昇開發體驗。
+用純HTML5手刻DApp固然可行，但更多的網頁開發者會選擇使用諸如`Webpack`等編譯工具來提昇開發體驗。使用`truffle unbox webpack`命令可以建立一個可運作的Weboack DApp。本文只會專注在DApp相關部份，不會介紹Webpack的使用與設定細節，讀者可另行找到許多參考資料。
 
 ## 設定環境
 
@@ -42,11 +42,89 @@ webpack output is served from /
 
 試試看配合MetaMask操作看看吧，當你在網頁介面上填入目的`帳戶地址`跟`MetaCoin轉出數目`後，MetaMask會被呼叫起來，在MetaMask上選擇同意交易後，這個帳號所擁有的`MetaCoin`數目就改變了。
 
-## HelloToken
+## 支援 HelloToken
 
-我們來將`MetaCoin`合約改成`HelloToken`合約，並對網頁做相應的修改以驗證。
+接著我們來將`MetaCoin`合約的DApp改成支援`HelloToken`合約的DApp。只需要加入`HelloToken`合約，並對`app/index.html`網頁做相應的修改。
 
-TODO..待續
+首先從之前範例中複製`contracts/HelloToken.sol`與`migrations/4_deploy_hellotoken.js`到對應資料夾中，並執行`npm install zeppelin-solidity --save`以在`package.json`中加入相應的函式庫。
+
+接著需修改`app/javascripts/app.js`。參考前面的單元測試，有三個修改重點：
+
+  1. 修改匯入合約，將匯入`MetaCoin`的地方改為匯入`HelloToken`。
+  2. 修改取得代幣餘額的函式為`balanceOf`。
+  3. 修改傳送代幣的函式為`transfer`。
+
+### 存取合約
+
+將程式碼
+
+```js
+import metacoin_artifacts from '../../build/contracts/MetaCoin.json'
+```
+
+修改為
+
+```js
+import metacoin_artifacts from '../../build/contracts/HelloToken.json'
+```
+
+要在DApp中引用合約，需要匯入編譯好的合約介面檔案(`.json`)，然後使用`truffle-contract`匯入。接下來的操作就跟在`truffle console`中的操作一樣了。
+
+```js
+import { default as contract } from 'truffle-contract'
+import metacoin_artifacts from '../../build/contracts/HelloToken.json'
+
+var MetaCoin = contract(metacoin_artifacts);
+```
+
+  本章選擇盡量減少修改行數以便讀者依循，因此並未將變數名稱一併修改。讀者在確定DApp運作正常後，可以自行修改變數名稱試試。
+
+### 修改取得代幣餘額的函式
+
+將程式碼
+
+```js
+return meta.getBalance.call(account, {from: account});
+```
+
+修改為
+
+```js
+return meta.balanceOf(account, {from: account});
+```
+
+### 修改傳送代幣的函式
+
+將程式碼
+
+```js
+return meta.sendCoin(receiver, amount, {from: account});
+```
+
+修改為
+
+```js
+return meta.transfer(receiver, amount, {from: account});
+```
+
+執行`truffle migrate`將新的合約部署上本地測試網路，然後執行`npm run dev`運行網站。
+
+可以看到修改後的網頁
+
+![Imgur](https://i.imgur.com/hB87eRH.png)
+
+我們可以在MetaMask中切換不同測試帳戶，然後在網頁上查看`HelloToken`代幣餘額。
+
+接著我們可以嘗試從第一個帳戶(預設)轉一些`HelloToken`到第二個帳戶。
+
+在按下頁面上的`Send Token`按鈕後，記得在`MetaMask`中確認送出。
+![Imgur](https://i.imgur.com/Sddx7lX.png)
+
+轉帳完成後，刷新頁面可以看到代幣餘額也更新了。
+
+![Imgur](https://i.imgur.com/axQa9FA.png)
+
+有了DApp代幣轉帳介面之後，連發代幣都變得簡單了！
 
 ## 參考資料
 
@@ -54,3 +132,4 @@ TODO..待續
 * [1] Building and testing a frontend app with Truffle http://truffleframework.com/tutorials/building-testing-frontend-app-truffle-3
 * [2] How to start developing on Ethereum for web developers http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
 * [3] http://truffleframework.com/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development
+* [4] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_webpack

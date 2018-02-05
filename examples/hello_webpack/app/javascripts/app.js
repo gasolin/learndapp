@@ -8,7 +8,7 @@ import { default as contract } from 'truffle-contract'
 // Import our contract artifacts and turn them into usable abstractions.
 import hellotoken_artifacts from '../../build/contracts/HelloToken.json'
 
-// MetaCoin is our usable abstraction, which we'll use through the code below.
+// HelloToken is our usable abstraction, which we'll use through the code below.
 var HelloToken = contract(hellotoken_artifacts);
 
 // The following code is simple to show off interacting with your contracts.
@@ -21,7 +21,7 @@ window.App = {
   start: function() {
     var self = this;
 
-    // Bootstrap the MetaCoin abstraction for Use.
+    // Bootstrap the HelloToken abstraction for Use.
     HelloToken.setProvider(web3.currentProvider);
 
     // Get the initial account balance so it can be displayed.
@@ -89,7 +89,7 @@ window.App = {
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
+    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 HelloToken, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
