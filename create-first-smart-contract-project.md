@@ -28,15 +28,11 @@ contract HelloWorld {
 
 將程式碼定義的合約畫成UML圖如下
 
-```uml
-@startuml
-
+{% plantuml %}
 class HelloWorld {
 + sayHello()
 }
-
-@enduml
-```
+{% endplantuml %}
 
 ```
 pragma solidity ^0.4.11;

@@ -10,16 +10,12 @@ function echo(string name) constant returns (string) {
 
 修改後的合約畫成UML圖如下
 
-```uml
-@startuml
-
+{% plantuml %}
 class HelloWorld {
 + sayHello()
 + echo()
 }
-
-@enduml
-```
+{% endplantuml %}
 
 
 新的`echo`方法中傳入了一個`name`參數。我們也為`echo`方法加入一個`constant`宣告，表示呼叫這個方法並不會改變區塊鏈的狀態。如此一來，透過`truffle-contract`來呼叫此方法時，會自動選用`call`來呼叫，也不需要額外提供gas。

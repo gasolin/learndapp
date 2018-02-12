@@ -1,5 +1,5 @@
 {
-    "plugins": ["mermaid", "chart", "rss", "uml"],
+    "plugins": ["mermaid", "chart", "rss", "puml"],
     "pluginsConfig": {
         "chart": {
             "type": "c3"

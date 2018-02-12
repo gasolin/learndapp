@@ -57,6 +57,17 @@ contract SimpleToken {
 
 ### 講解
 
+將程式碼定義的合約畫成UML圖如下
+
+{% plantuml %}
+class SimpleToken {
+  INITIAL_SUPPLY : uint256
+  balances : map
++ transfer()
++ balanceOf()
+}
+{% endplantuml %}
+
 ```
 pragma solidity ^0.4.11;
 ```
