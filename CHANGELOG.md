@@ -4,8 +4,3 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="0.4.2"></a>
 ## 0.4.2 (2018-02-19)
-
-
-
-<a name="0.4.1"></a>
-## 0.4.1 (2018-02-19)

@@ -1,6 +1,7 @@
 # 使用MetaMask錢包收送乙太幣
 
 在開始DApp開發前，我們需要先熟悉如何使用瀏覽器上的「加密貨幣錢包」，然後再談如何開發DApp。
+
 所謂加密貨幣錢包，是透過匯入私鑰或助憶碼，來取得對應帳號管理權的應用程式，透過加密貨幣錢包，可以讓使用者用加密貨幣做交易。
 
 ## 安裝MetaMask錢包
@@ -98,8 +99,9 @@ Running migration: 4_deploy_hellotoken.js
 
 ![Imgur](https://i.imgur.com/cZD3rF5.png)
 
-現在我們能在MetaMask中查看自製的代幣了。那麼要如何收送各種代幣呢？這就要靠即將介紹的DApp了。
+現在我們能在MetaMask中查看自製的代幣了。那麼要如何收送各種代幣呢？這就要靠下章介紹的DApp了[^2]。
 
 ## 參考資料
 
 * [1] How to add Ethereum based ICO Tokens in Metamask https://steemit.com/ico/@devender/how-to-add-etheruem-based-ico-tokens-in-metamask
+* [2] 也可以使用MyEtherWallet收送自製代幣 How To Send A Transaction https://myetherwallet.github.io/knowledge-base/send/how-to-send-transaction.html
