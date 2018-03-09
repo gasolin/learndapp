@@ -4,17 +4,19 @@
 
 ## Solidity 語言
 
-Ethereum上的智能合約需要使用`solidity`[^1]語言來撰寫。雖然還有其他能用來撰寫智能合約的語言如`Serpent`\(類Python\)、`lll`\(類Fortran\)，但目前看到所有公開的智能合約都是使用solidity撰寫。
+Ethereum上的智能合約需要使用`solidity`[^1]語言來撰寫。雖然還有其他能用來撰寫智能合約的語言如`Serpent`(類Python)、`lll`(類Fortran)，但目前看到所有公開的智能合約都是使用solidity撰寫。
 
-宣傳上說，solidity是一種類似Javascript的語言，而且圍繞著solidity的各種開發工具鏈，都是使用屬於Javascript生態系的npm來提供的。但我覺得solidity還是比較像Java或Go語言。 因為和Javascript不同，solidity與Java或Go同屬於強型別\(Strong Type，在定義變數時需要指定型別\)語言、在定義函式\(function\)時同樣需指定回傳的型別\(type\)、同樣也需要先編譯才能執行。這些特性都是Javascript所不具備的。
+宣傳上說，solidity是一種類似Javascript的語言，但我覺得solidity還是比較像Java或Go語言。因為和Javascript不同，solidity與Java或Go同屬於強型別(Strong Type，在定義變數時需要指定型別)語言、在定義函式(function)時同樣需指定回傳的型別(type)、同樣也需要先編譯才能執行。這些特性都是Javascript所不具備的。
+
+圍繞著solidity的各種開發工具鏈，都是使用屬於Javascript生態系的npm來提供的。在後續開發DApp時，能運用同一套建構(Build)環境的優勢就突顯出來了。
 
 ## 開發前的準備 {#開發前的準備}
 
-本文將使用當前最活躍的智能合約開發框架`truffle`[^3]為基礎來開發。之前提到過的ENS\(Ethereum Name Service\)[^5]也是採用truffle框架。其他選擇還有`embark`[^4]等。
+本文將使用當前最活躍的智能合約開發框架`truffle`[^3]為基礎來開發。目前多數智能合約皆採用truffle框架開發。其他選擇還有`embark`[^4]等。
 
-就像一般網站或App開發一樣，在提供公開服務之前，開發者會在自己用於寫程式的電腦\(又稱作本機\)💻或透過測試網路🕸來測試程式執行的效果，測試完成後，才會部署到公開的網路上提供服務。 開發區塊鏈智能合約\(程式\)的過程也是如此。特別是公開鏈上所有寫入或讀取計算結果的操作都需要真金白銀\(虛擬代幣\)💸，而且根據網路狀況，每個公開鏈上的操作都需要要一小段反應時間\(15秒 ~ 數分鐘\)，這些等待頗浪費寶貴的開發時間⏳。 因此在開發的過程中，我們將使用`testrpc`[^6]工具在電腦上模擬智能合約所需的乙太坊區塊鏈測試環境。
+就像一般網站或App開發一樣，在提供公開服務之前，開發者會在自己用於寫程式的電腦(又稱作本機)💻或透過測試網路🕸來測試程式執行的效果，測試完成後，才會部署到公開的網路上提供服務。 開發區塊鏈智能合約(程式)的過程也是如此。特別是公開鏈上所有寫入或讀取計算結果的操作都需要真金白銀(虛擬代幣)💸，而且根據網路狀況，每個公開鏈上的操作都需要要一小段反應時間(15秒 ~ 數分鐘)，這些等待頗浪費寶貴的開發時間⏳。 因此在開發的過程中，我們將使用`testrpc`[^6]工具在電腦上模擬智能合約所需的乙太坊區塊鏈測試環境。
 
-testrpc中也包含了Javascript版本的Ethereum虛擬機\(Ethereum Virtual Machine\)[^7]，因此可以完整地執行智能合約😇。
+testrpc中也包含了Javascript版本的Ethereum虛擬機(Ethereum Virtual Machine)[^7]，因此可以完整地執行智能合約😇。
 
 此外，開發前還需準備一個合手的編輯器。我目前是使用[Visual Studio Code](https://code.visualstudio.com)搭配[solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity)插件來開發。solidity插件除了支援語法高亮之外，也會透過Solium[^11]檢查並提示基本的語法錯誤，相當方便。其他編輯器應該也有類似的插件可選擇。
 
@@ -67,6 +69,16 @@ Base HD Path:  m/44'/60'/0'/0/{account_index}
 可以看到testrpc啟動後自動建立了10個帳號\(Accounts\)，與每個帳號對應的私鑰\(Private Key\)🔑。每個帳號中都有100個測試用的以太幣\(Ether\)💵。要注意testrpc僅運行在記憶體中，因此每次重開時都會回到全新的狀態。
 
 如果不習慣命令行界面，也可以試試同樣是Truffle團隊開發的圖形化區塊鍊測試軟體`ganache`[^8]。雖然界面圖形化了，但基本的概念都是相通的。
+
+
+## 升級truffle
+
+由於Ethereum仍在快速發展階段，開發工具也不斷地在更新。要安裝新版本的truffle時，需要先反安裝後再重新安裝。輸入以下命令即可重新安裝truffle：
+
+```
+$ npm uninstall -g truffle
+$ npm install -g truffle
+```
 
 一切準備就緒，我們可以開始建立第一份智能合約專案了。
 

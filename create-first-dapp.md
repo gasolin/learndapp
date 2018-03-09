@@ -115,6 +115,8 @@ $ http-server .
   寫作時使用npm install web3下載的函式庫中並未包含dist/目錄[^1]，我已送patch去修復這個問題。
   在修復之前，讀者可以先到[github](https://github.com/ethereum/web3.js/blob/develop/dist/web3.js)下載檔案，並將web3.js將放到`node_modules/web3/dist/`目錄下。
 
+  另一個方法是改從github直接安裝0.20.x版本 `npm install https://github.com/ethereum/web3.js.git#develop --save` 注意這邊使用的API和本書範例中使用的1.x API不同。
+
 ```js
 var web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:8545");
 ```
