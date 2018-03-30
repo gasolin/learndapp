@@ -14,7 +14,7 @@
     - [建立可放到錢包的標準代幣](create-an-erc20-compatible-token.md)
     - [加入單元測試](add-unit-test.md)
     - [使用MetaMask錢包收送乙太幣](howto-send-ether-from-wallet.md)
-  - [將智能合約部署到測試網路](deploy-to-testnet)
+  - [將智能合約部署到公開測試網路](deploy-to-testnet)
 * [DApp](dapp.md)
    - [分散式網頁應用(DApp)是什麼](what-is-dapp.md)
    - [建立第一個DApp](create-first-dapp.md)
