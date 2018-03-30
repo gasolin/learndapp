@@ -128,8 +128,8 @@ return meta.transfer(receiver, amount, {from: account});
 
 ## 參考資料
 
-* [] Truffle webpack box (template) http://truffleframework.com/boxes/webpack
-* [1] Building and testing a frontend app with Truffle http://truffleframework.com/tutorials/building-testing-frontend-app-truffle-3
-* [2] How to start developing on Ethereum for web developers http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
-* [3] http://truffleframework.com/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development
-* [4] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_webpack
+* [1] Truffle webpack box (template) http://truffleframework.com/boxes/webpack
+* [2] Building and testing a frontend app with Truffle http://truffleframework.com/tutorials/building-testing-frontend-app-truffle-3
+* [3] How to start developing on Ethereum for web developers http://jefflau.net/how-to-start-developing-on-ethereum-for-web-developers/
+* [4] http://truffleframework.com/tutorials/how-to-install-truffle-and-testrpc-on-windows-for-blockchain-development
+* [5] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_webpack
