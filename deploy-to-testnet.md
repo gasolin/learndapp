@@ -21,6 +21,8 @@ Infura 提供了可公開存取的乙太坊節點，前面介紹的MetaMask也�
 
 前往 https://faucet.rinkeby.io 以取得免費的測試Ether。https://faucet.rinkeby.io 要求先從你的 Twitter, Google+, Facebook 帳戶中擇一貼上一則公開訊息。這則訊息需包含你的乙太坊帳戶地址(`0x...`)。在 MetaMask 中複製目前的帳戶地址後貼到上述任一社交網站上，然後將公開網址連結貼到 https://faucet.rinkeby.io ，等一陣子即可在帳戶中收到測試用的Ether。
 
+![Imgur](https://i.imgur.com/Rctp3gKl.png)
+
 如果過一陣子還沒看到，可以檢查一下 MetaMask 當前的網路是否為`rinkeby`測試網路。
 
 ### 修改 truffle.js 設定
@@ -67,6 +69,11 @@ module.exports = {
   }
 ```
 
+`rinkeby`是truffle.js中這個網路偏好設定的代號，可以任意修改，這邊依使用的公開測試網路的代號`rinkeby`來取名。
+
+`provider` 設定最好能包成一個函式（function），這樣只有運行到這段設定時，裡面的內容才會開始執行。
+
+
 ## 部署
 
 要部署到公開測試網路一樣是使用`truffle migrate`命令，只需在其後加上`--network 測試網路代號` 即可。
@@ -75,7 +82,7 @@ module.exports = {
 $ truffle migrate --network rinkeby
 ```
 
-部署後的紀錄如下：
+部署後命令行顯示的紀錄如下：
 
 ```js
 $ truffle migrate --network rinkeby

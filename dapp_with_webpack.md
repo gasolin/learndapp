@@ -77,7 +77,7 @@ import metacoin_artifacts from '../../build/contracts/HelloToken.json'
 var MetaCoin = contract(metacoin_artifacts);
 ```
 
-  本章選擇盡量減少修改行數以便讀者依循，因此並未將變數名稱一併修改。讀者在確定DApp運作正常後，可以自行修改變數名稱試試。
+  本章選擇盡量減少修改行數以便讀者依循，因此並未將變數名稱一併修改。讀者在確定DApp運作正常後，可以自行嘗試修改變數名稱。
 
 ### 修改取得代幣餘額的函式
 
