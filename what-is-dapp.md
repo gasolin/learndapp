@@ -26,6 +26,6 @@ DApp --- 瀏覽器
 
 ## DApp如何與智能合約溝通?
 
-要和智能合約溝通，可以透過在網頁端引入[Web3.js](https://github.com/ethereum/wiki/wiki/JavaScript-API)或[ether.js](https://docs.ethers.io/ethers.js/html/)函式庫。若使用MetaMask錢包或支援DApp的瀏覽器，會在網頁中自動嵌入`web3.js`。
+要和智能合約溝通，可以透過在網頁端引入[Web3.js](https://github.com/ethereum/wiki/wiki/JavaScript-API)、[ethjs](https://github.com/ethjs/ethjs)，或[ether.js](https://docs.ethers.io/ethers.js/html/)函式庫。若使用MetaMask錢包或支援DApp的瀏覽器，會在網頁中自動嵌入`web3.js`。
 
-在接下來的章節中，將使用常見的`Web3`函式庫。DApp可以透過`Web3`函式庫來操作以太坊相關的加密貨幣帳號與智慧合約。
+在接下來的章節中，將先使用常見的`Web3`函式庫，再改用`ethjs`函式庫。DApp可以透過`Web3`等函式庫來操作以太坊相關的加密貨幣帳戶與智慧合約。

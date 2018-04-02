@@ -6,11 +6,11 @@
 graph LR
 
 subgraph 前端
-網頁[網頁(Web)]
+網頁[網頁]
 end
 
 subgraph ethereum
-Contract[智能合約(contracts)]
+Contract[智能合約]
 end
 
 subgraph 使用者
