@@ -91,8 +91,8 @@ contract SimpleToken {
 }
 ```
 
-和合約同名的`SimpleToken`函式，就是`SimpleToken`這個合約的建構函式(constructor)。函式中我們拿`msg.sender`當作key，`INITIAL_SUPPLY`當作值，將所有的初始代幣`INITIAL_SUPPLY`都指定給`msg.sender`帳號。
-`msg`是一個全域(Global)物件[^2]，`msg.sender`表示用作呼叫當前函式的帳號。由於建構函式只有在合約部署時會被執行，因此這邊用到的`msg.sender`，也就代表著用來部署這個合約的帳號。
+和合約同名的`SimpleToken`函式，就是`SimpleToken`這個合約的建構函式(constructor)。函式中我們拿`msg.sender`當作key，`INITIAL_SUPPLY`當作值，將所有的初始代幣`INITIAL_SUPPLY`都指定給`msg.sender`帳戶。
+`msg`是一個全域(Global)物件[^2]，`msg.sender`表示用作呼叫當前函式的帳戶。由於建構函式只有在合約部署時會被執行，因此這邊用到的`msg.sender`，也就代表著用來部署這個合約的帳戶。
 
 ```
 function transfer(address _to, uint256 _amount) public {
@@ -102,7 +102,7 @@ function transfer(address _to, uint256 _amount) public {
 }
 ```
 
-`transfer`函式定義了如何`轉帳`，只要指定要傳送的帳號與數目，就會從呼叫者手上把對應數目的代幣移轉到指定的帳號上。
+`transfer`函式定義了如何`轉帳`，只要指定要傳送的帳戶與數目，就會從呼叫者手上把對應數目的代幣移轉到指定的帳戶上。
 
 {% mermaid %}
 graph LR
@@ -120,7 +120,7 @@ function balanceOf(address _owner) public constant returns (uint256) {
 }
 ```
 
-`balanceOf`函式的作用，是讓使用者可以查詢任一帳號的餘額。透過傳入`_owner`帳號，可以查詢`_owner`帳號儲存在`balances`對照表中的值。
+`balanceOf`函式的作用，是讓使用者可以查詢任一帳戶的餘額。透過傳入`_owner`帳戶，可以查詢`_owner`帳戶儲存在`balances`對照表中的值。
 
 {% mermaid %}
 graph LR
@@ -199,21 +199,21 @@ BigNumber { s: 1, e: 4, c: [ 10000 ] }
 BigNumber { s: 1, e: 0, c: [ 0 ] }
 ```
 
-還記得啟動testrpc後預設會產生10個帳號(Accounts)嗎?。`web3.eth.coinbase` 代表操作者預設的帳號，即10個帳號中的第一個帳號`web3.eth.accounts[0]`，所以這邊呼叫`web3.eth.coinbase`或`web3.eth.accounts[0]`結果是一樣的。
+還記得啟動testrpc後預設會產生10個帳戶(Accounts)嗎?。`web3.eth.coinbase` 代表操作者預設的帳戶，即10帳戶的第一個帳戶`web3.eth.accounts[0]`，所以這邊呼叫`web3.eth.coinbase`或`web3.eth.accounts[0]`結果是一樣的。
 
 ```sh
 > contract.balanceOf(web3.eth.accounts[0])
 BigNumber { s: 1, e: 4, c: [ 10000 ] }
 ```
 
-這兩句的目的是在進行轉帳操作前，先查詢前兩個帳號所擁有的代幣餘額。透過呼叫`balanceOf`函式，可以看到第一個帳號(部署合約的帳號)裡存著所有的代幣。
+這兩句的目的是在進行轉帳操作前，先查詢前兩個帳戶所擁有的代幣餘額。透過呼叫`balanceOf`函式，可以看到第一個帳戶(部署合約的帳戶)裡存著所有的代幣。
 
 ```sh
 > contract.transfer(web3.eth.accounts[1], 123)
 ...
 ```
 
-接著使用`transfer`函式來傳送`123`個代幣到第二個帳號`web3.eth.accounts[1]`。如果轉帳成功，傳送者預設帳號中會減少123個代幣，接收者帳號中會增加123個代幣。
+接著使用`transfer`函式來傳送`123`個代幣到第二個帳戶`web3.eth.accounts[1]`。如果轉帳成功，傳送者預設帳戶中會減少123個代幣，接收者帳戶中會增加123個代幣。
 
 ```sh
 > contract.balanceOf(web3.eth.coinbase)
@@ -223,13 +223,13 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 >
 ```
 
-我們再次透過呼叫`balanceOf`函式，查詢傳送者帳號和接收者帳號各自剩下的SimpleToken數目。發現轉帳真的成功了。
+我們再次透過呼叫`balanceOf`函式，查詢傳送者帳戶和接收者帳戶各自剩下的SimpleToken數目。發現轉帳真的成功了。
 
 ## 你知道剛剛的程式碼裡有一堆安全漏洞💣嗎?
 
 寫智能合約看起來並不困難吧？但因為智能合約的運作是透明公開的，而且其中牽涉了代幣或金錢的流動，這提供了駭客很強的挑戰動機。
 
-因此如果要妥善處理智能合約，會遇到的諸多安全問題。即使單純如本篇中的`SimpleToken`，也至少會遇到幾個問題：例如`transfer`函式中沒有禁止傳入負數金額，因此傳送者反過來可以從接收者那邊取得代幣。同時也沒有檢查接收者帳號是否合法，因此傳送者可能會傳送失敗或因為送到黑洞中，白白損失了代幣。
+因此如果要妥善處理智能合約，會遇到的諸多安全問題。即使單純如本篇中的`SimpleToken`，也至少會遇到幾個問題：例如`transfer`函式中沒有禁止傳入負數金額，因此傳送者反過來可以從接收者那邊取得代幣。同時也沒有檢查接收者帳戶是否合法，因此傳送者可能會傳送失敗或因為送到黑洞中，白白損失了代幣。
 
 有著一堆安全漏洞的合約，輕則執行失敗白花交易費用，嚴重則影響到合約中的代幣或以太幣。已有多起因為合約的漏洞，造成儲存在合約中的代幣或以太幣被駭客轉走，使得ICO失敗的案例。
 

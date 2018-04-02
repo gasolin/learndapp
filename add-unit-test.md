@@ -56,7 +56,7 @@ contract('HelloToken', function(accounts) {
 
 Truffle是使用Javascript開發中常見的[Mocha](https://mochajs.org/)測試框架和[Chai](http://chaijs.com/)斷言庫來做單元測試。差別只是把Mocha test中的 `describe`換成`contract`。根據官方文件[^1]，`contact`執行前會自動重新部署到testrpc(或測試網路)上，所以智能合約會是剛部署好乾淨的狀態。
 
-此外，`contract`也會帶入`accounts`變數，裡面儲存了testrpc或其他你運行的測試網路所提供的帳號，開發者可以直接使用這些帳號來測試合約。
+此外，`contract`也會帶入`accounts`變數，裡面儲存了testrpc或其他你運行的測試網路所提供的帳戶，開發者可以直接使用這些帳戶來測試合約。
 
 第一個測試是來測部署合約後預設的代幣數目是否正確。
 
@@ -183,13 +183,13 @@ assert.equal(account0Balance.toNumber(), INITIAL_SUPPLY);
 assert.equal(account1Balance.toNumber(), 0);
 ```
 
-範例的前半部測試`帳號0`與`帳號1`中的代幣餘額。`帳號0`即部署代幣的帳號，因此擁有所有的`HelloToken`代幣，而`帳號1`中則沒有`HelloToken`代幣。
+範例的前半部測試`帳戶0`與`帳戶1`中的代幣餘額。`帳戶0`即部署代幣的帳戶，因此擁有所有的`HelloToken`代幣，而`帳戶1`中則沒有`HelloToken`代幣。
 
 ```js
 await contract.transfer(accounts[1], AMOUNT);
 ```
 
-接著呼叫合約的`transfer`方法將一些代幣轉入`帳號1`。注意這些都是非同步的操作（送出傳輸命令後，要先等待區塊鏈確認），因此需要使用`await`語句。
+接著呼叫合約的`transfer`方法將一些代幣轉入`帳戶1`。注意這些都是非同步的操作（送出傳輸命令後，要先等待區塊鏈確認），因此需要使用`await`語句。
 
 ```js
 account0Balance = await contract.balanceOf(accounts[0]);
@@ -198,7 +198,7 @@ assert.equal(account0Balance.toNumber(), INITIAL_SUPPLY - AMOUNT);
 assert.equal(account1Balance.toNumber(), AMOUNT);
 ```
 
-範例的後半部再次測試`帳號0`與`帳號1`中的代幣餘額。結果符合轉帳後兩個帳戶的預期代幣數額。
+範例的後半部再次測試`帳戶0`與`帳戶1`中的代幣餘額。結果符合轉帳後兩個帳戶的預期代幣數額。
 
 
 ## 結語

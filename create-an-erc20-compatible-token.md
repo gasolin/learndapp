@@ -19,7 +19,7 @@ $ testrpc
 testrpc --seed apple banana cherry
 ```
 
-這樣之後重新啟動testrpc時可以產生一樣的帳號(accounts)和私鑰(private key)。
+這樣之後重新啟動testrpc時可以產生一樣的帳戶(accounts)和私鑰(private key)。
 
 ## ERC20標準
 
@@ -177,7 +177,7 @@ function HelloToken() public {
 ```
 
 和合約同名的`HelloToken`方法，就是`HelloToken`合約的建構函式(constructor)。
-在建構式裡指定了`totalSupply_`數目，並將所有的初始代幣`INITIAL_SUPPLY`都指定給`msg.sender`帳號，也就是用來部署這個合約的帳號。‵`totalSupply_`與`balances`都定義於[BasicToken.sol](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/BasicToken.sol)中。
+在建構式裡指定了`totalSupply_`數目，並將所有的初始代幣`INITIAL_SUPPLY`都指定給`msg.sender`帳戶，也就是用來部署這個合約的帳戶。‵`totalSupply_`與`balances`都定義於[BasicToken.sol](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/BasicToken.sol)中。
 
 ```
 import "./ERC20Basic.sol";
@@ -264,15 +264,15 @@ BigNumber { s: 1, e: 5, c: [ 100000 ] }
 BigNumber { s: 1, e: 0, c: [ 0 ] }
 ```
 
-`web3.eth.coinbase` 代表操作者預設的帳號，即testrpc所提供的10個帳號中的第一個帳號，也可以透過`web3.eth.accounts[0]`取得。
-這兩句的目的是在進行轉帳操作前，先查詢前兩個帳號所擁有的代幣餘額。透過呼叫`balanceOf`函式，可以看到第一個帳號(部署合約的帳號)裡存著所有的代幣。
+`web3.eth.coinbase` 代表操作者預設的帳戶，即testrpc所提供的10個帳戶中的第一個帳戶，也可以透過`web3.eth.accounts[0]`取得。
+這兩句的目的是在進行轉帳操作前，先查詢前兩個帳戶所擁有的代幣餘額。透過呼叫`balanceOf`函式，可以看到第一個帳戶(部署合約的帳戶)裡存著所有的代幣。
 
 ```
 > contract.transfer(web3.eth.accounts[1], 123)
 ...
 ```
 
-接著使用`transfer`函式來傳送`123`個代幣到第二個帳號`web3.eth.accounts[1]`。如果轉帳成功，傳送者預設帳號中會減少`123`個代幣，接收者帳號中會增加`123`個代幣。
+接著使用`transfer`函式來傳送`123`個代幣到第二帳戶`web3.eth.accounts[1]`。如果轉帳成功，傳送者預設帳戶中會減少`123`個代幣，接收者帳戶中會增加`123`個代幣。
 
 ```
 > contract.balanceOf(web3.eth.accounts[0])
@@ -282,7 +282,7 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 >
 ```
 
-我們再次透過呼叫`balanceOf`函式，查詢傳送者帳號和接收者帳號各自剩下的HelloToken數目。發現轉帳真的成功了。
+我們再次透過呼叫`balanceOf`函式，查詢傳送者帳戶接收者帳戶各自剩下的HelloToken數目。發現轉帳真的成功了。
 
 ## 結語
 

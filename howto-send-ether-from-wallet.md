@@ -2,7 +2,7 @@
 
 在開始DApp開發前，我們需要先熟悉如何使用瀏覽器上的「加密貨幣錢包」，然後再談如何開發DApp。
 
-所謂加密貨幣錢包，是透過匯入私鑰或助憶碼，來取得對應帳號管理權的應用程式，透過加密貨幣錢包，可以讓使用者用加密貨幣做交易。
+所謂加密貨幣錢包，是透過匯入私鑰或助憶碼，來取得對應帳戶管理權的應用程式，透過加密貨幣錢包，可以讓使用者用加密貨幣做交易。
 
 ## 安裝MetaMask錢包
 
@@ -24,15 +24,15 @@ testrpc --seed apple banana cherry
 
 ![Imgur](https://i.imgur.com/32rikcB.png)
 
-切換好網路之後，還要記得匯入測試網路上的帳號。這樣我們才能用本地測試網路上的帳號來互相交易代幣。
+切換好網路之後，還要記得匯入測試網路上的帳戶。這樣我們才能用本地測試網路上的帳戶來互相交易代幣。
 
-## 匯入本地測試網路帳號
+## 匯入本地測試網路帳戶
 
-點選在右上角選單左側的帳號圖示，選擇`Import Account`(匯入帳號)
+點選在右上角選單左側的帳戶圖示，選擇`Import Account`(匯入帳戶)
 
 ![Imgur](https://i.imgur.com/0aY0n1s.png)
 
-在畫面上輸入私鑰帳號(Private Key)，如果你跟我輸入一樣的`testrpc --seed ...`命令，那麼將使用以下的帳號作為預設的帳號(testrpc中的account 0)
+在畫面上輸入私鑰帳戶(Private Key)，如果你跟我輸入一樣的`testrpc --seed ...`命令，那麼將使用以下的帳戶作為預設的帳戶(testrpc中的account 0)
 
 ```
 bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
@@ -40,23 +40,23 @@ bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
 
 ![Imgur](https://i.imgur.com/ZBBVDMF.png)
 
-輸入完成後回到畫面，可以看到一個擁有100 ETH的帳號已可使用。
+輸入完成後回到畫面，可以看到一個擁有100 ETH的帳戶已可使用。
 
 ![Imgur](https://i.imgur.com/uwKB3tD.png)
 
-我們可以用同樣步驟匯入第二個帳號(testrpc中的 account 1)來互相交易代幣。
+我們可以用同樣步驟匯入第二個帳戶(testrpc中的 account 1)來互相交易代幣。
 
 ```
 8c90c6365f62ff46b3a04edc5dbae3f401f36a50ce5f6da03ba12c08d8a72478
 ```
 
-完成後我的Metamask上有三個帳號。第一個是Main Network的帳號，後兩個是本地測試網路的帳號。
+完成後我的Metamask上有三個帳戶。第一個是Main Network的帳戶，後兩個是本地測試網路的帳戶。
 
 ## 開始交易
 
 我們試試看在Metamask中，由第二個測試網路帳戶的以太幣轉帳轉到第一個測試網路帳戶。
 
-首先，要取得第一個測試網路帳戶的公開地址。若要在Metamask中取得第一個測試網路帳戶的公開地址，首先得切換回第一個測試網路帳戶，並選擇`Copy Address to Clipboard`(將帳號地址複製到剪貼簿)。
+首先，要取得第一個測試網路帳戶的公開地址。若要在Metamask中取得第一個測試網路帳戶的公開地址，首先得切換回第一個測試網路帳戶，並選擇`Copy Address to Clipboard`(將帳戶地址複製到剪貼簿)。
 
 ![Imgur](https://i.imgur.com/gbihVdp.png)
 

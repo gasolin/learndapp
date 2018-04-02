@@ -100,7 +100,7 @@ $ npm install http-server -g
 $ http-server .
 ```
 
-在瀏覽器中打開`http://127.0.0.1:8080/`網址，可以看到帳號地址與以太幣餘額。
+在瀏覽器中打開`http://127.0.0.1:8080/`網址，可以看到帳戶地址與以太幣餘額。
 
 ![Imgur](https://i.imgur.com/1vqPwVI.png)
 

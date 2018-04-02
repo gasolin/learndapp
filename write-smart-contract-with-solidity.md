@@ -66,7 +66,7 @@ Mnemonic:      addict cherry medal cupboard bless reduce oven beauty egg gift pl
 Base HD Path:  m/44'/60'/0'/0/{account_index}
 ```
 
-可以看到testrpc啟動後自動建立了10個帳號\(Accounts\)，與每個帳號對應的私鑰\(Private Key\)🔑。每個帳號中都有100個測試用的以太幣\(Ether\)💵。要注意testrpc僅運行在記憶體中，因此每次重開時都會回到全新的狀態。
+可以看到testrpc啟動後自動建立了10個帳戶\(Accounts\)，與每個帳戶對應的私鑰\(Private Key\)🔑。每個帳戶中都有100個測試用的以太幣\(Ether\)💵。要注意testrpc僅運行在記憶體中，因此每次重開時都會回到全新的狀態。
 
 如果不習慣命令行界面，也可以試試同樣是Truffle團隊開發的圖形化區塊鏈測試軟體`ganache`[^8]。雖然界面圖形化了，但基本的概念都是相通的。
 
