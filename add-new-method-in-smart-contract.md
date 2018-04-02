@@ -90,7 +90,7 @@ truffle(develop)> contract.sayHello.call()
 'Hello World'
 ```
 
-可以看到，在命令行中輸入`truffle develop`命令，可以直接在裡面執行`compile`，`migrate`指令，還可以直接使用`console`命令所提供的與區塊鍊互動等功能。
+可以看到，在命令行中輸入`truffle develop`命令，可以直接在裡面執行`compile`，`migrate`指令，還可以直接使用`console`命令所提供的與區塊鏈互動等功能。
 
 ## 結語 {#結語}
 

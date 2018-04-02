@@ -1,8 +1,8 @@
 ## 什麼是區塊鏈？
 
-2017年比特幣\(Bitcoin\)[^1]與以太幣\(Ether\)[^2]價格紛紛到達新高。主因除了隨著更多支援加密貨幣\(Crypto Currency\)-當地貨幣的兌換/代購/交易所開張，取得虛擬貨幣/代幣的方式更加多元外，首次公開發行加密代幣\(ICO, Initial Coin/Crypto Token Offering\)[^3]這種創新的投資/募資方式愈加熱絡，也讓一些個人與機構意識到虛擬貨幣作為貨幣或貨品的投資價值。
+2017年比特幣(Bitcoin)[^1]與以太幣(Ether)[^2]價格紛紛到達新高。主因除了隨著更多支援加密貨幣(Crypto Currency)-當地貨幣的兌換/代購/交易所開張，取得虛擬貨幣/代幣的方式更加多元外，首次公開發行加密代幣(ICO, Initial Coin/Crypto Token Offering)[^3]這種創新的投資/募資方式愈加熱絡，也讓一些個人與機構意識到虛擬貨幣作為貨幣或貨品的投資價值。
 
-這些虛擬幣背後所使用的技術叫做區塊鏈\(blockchain\)[^4]，可以用來解決各種「交易」相關的**「信任」**問題。
+這些虛擬幣背後所使用的技術叫做區塊鏈(blockchain)[^4]，可以用來解決各種「交易」相關的**「信任」**問題。
 
 ## 網際網路交換訊息，區塊鏈交換價值 {#網際網路交換訊息-區塊鏈交換價值}
 
@@ -52,7 +52,7 @@ P2P --- 網際網路
 * [9] [https://www.hyperledger.org/](https://www.hyperledger.org/)
 * [10] [https://entethalliance.org/](https://entethalliance.org/)
 * [11] [https://en.wikipedia.org/wiki/Proof-of-work\_system](https://en.wikipedia.org/wiki/Proof-of-work_system)
-* [12] How Bitcoin Works Under the Hood 
+* [12] How Bitcoin Works Under the Hood
   [https://www.youtube.com/watch?v=Lx9zgZCMqXE](https://www.youtube.com/watch?v=Lx9zgZCMqXE)
 * [13] TED [How the blockchain will radically transform the economy](https://www.youtube.com/watch?v=RplnSVTzvnU)
 * [14] [Blockchain 101 - A Visual Demo](https://youtu.be/_160oMzblY8)

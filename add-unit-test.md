@@ -189,7 +189,7 @@ assert.equal(account1Balance.toNumber(), 0);
 await contract.transfer(accounts[1], AMOUNT);
 ```
 
-接著呼叫合約的`transfer`方法將一些代幣轉入`帳號1`。注意這些都是非同步的操作（送出傳輸命令後，要先等待區塊鍊確認），因此需要使用`await`語句。
+接著呼叫合約的`transfer`方法將一些代幣轉入`帳號1`。注意這些都是非同步的操作（送出傳輸命令後，要先等待區塊鏈確認），因此需要使用`await`語句。
 
 ```js
 account0Balance = await contract.balanceOf(accounts[0]);
