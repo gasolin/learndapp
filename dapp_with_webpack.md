@@ -1,6 +1,6 @@
-# 使用Webpack編譯DApp
+# 使用 Webpack 編譯 DApp
 
-用純HTML5手刻DApp固然可行，但更多的網頁開發者會選擇使用諸如`Webpack`等編譯工具來提昇開發體驗。使用`truffle unbox webpack`命令可以建立一個可運作的Weboack DApp。本文只會專注在DApp相關部份，不會介紹Webpack的使用與設定細節，讀者可另行找到許多參考資料。
+用純HTML5手刻DApp固然可行，但更多的網頁開發者會選擇使用諸如`Webpack`等編譯工具來提昇開發體驗。使用`truffle unbox webpack`命令可以建立一個可運作的Weboack DApp。本書後續的DApp架構並不會再直接使用Webpack/web3.js，而會改用`create-react-app`(React)和`Ethjs`。因此本文只會專注在DApp相關部份，不會介紹Webpack的使用與設定細節，讀者可另行找到許多參考資料。
 
 ## 設定環境
 

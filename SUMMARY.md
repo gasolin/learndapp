@@ -18,7 +18,8 @@
 * [DApp](dapp.md)
   - [分散式網頁應用(DApp)是什麼](what-is-dapp.md)
   - [建立第一個DApp](create-first-dapp.md)
-  -  [使用webpack編譯DApp](dapp_with_webpack.md)
+  - [使用 Webpack 編譯 DApp](dapp_with_webpack.md)
+  - [使用 React 開發 DApp](dapp-with-create-react-app.md)
   - 存取公開網路上的合約  (未完成)
 * DApp 應用
   - [Ethereum Name Service應用](ens.md)
