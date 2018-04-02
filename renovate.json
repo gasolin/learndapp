@@ -1,5 +1,13 @@
 {
   "extends": [
     "config:base"
+  ],
+  "packageFiles": [
+    "examples/hello_react_dapp/contracts",
+    "examples/hello_react_dapp/web",
+    "examples/hello_standard_token",
+    "examples/hello_token_test",
+    "examples/hello_web3",
+    "examples/hello_webpack"
   ]
 }
