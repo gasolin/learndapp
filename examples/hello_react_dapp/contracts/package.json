@@ -2,7 +2,12 @@
   "name": "hellotoken",
   "version": "1.0.0",
   "description": "hello token example",
+  "scripts": {
+    "build": "truffle compile && shx cp -R build/contracts* ../web/src/lib",
+    "deploy": "npm run build && truffle migrate"
+  },
   "dependencies": {
+    "shx": "^0.2.2",
     "zeppelin-solidity": "^1.6.0"
   }
 }

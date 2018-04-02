@@ -2,7 +2,6 @@ import Eth from 'ethjs'
 
 let eth = null;
 
-// follow https://github.com/ethereum/wiki/wiki/JavaScript-API
 if (typeof window.web3 !== 'undefined') {
   eth = new Eth(window.web3.currentProvider);
 } else {

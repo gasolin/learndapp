@@ -125,9 +125,7 @@ Contract --> 網頁
 
 透過網頁連接智能合約需要提供三個參數：合約所在的網路，合約部署的地址，合約的ABI。
 
-將conpile好的 `contracts/build/contracts/HelloToken.json`複製到`web/src/lib/HelloToken.json`中。
-
-在`src`目錄下建立`constants.js`檔案，將部署好的`HelloToken`地址複製過來。
+將編譯好的 `contracts/build/contracts/HelloToken.json`複製到`web/src/lib/contracts/HelloToken.json`中。並在`src`目錄下建立`constants.js`檔案，將部署好的`HelloToken`地址複製過來。
 
 ```js
 export const CONTRACT_ADDRESS = '0x345cA3e014Aaf5dcA488057592ee47305D9B3e10';
@@ -135,22 +133,150 @@ export const CONTRACT_ADDRESS = '0x345cA3e014Aaf5dcA488057592ee47305D9B3e10';
 
 ### 連上乙太坊網路
 
-```
+```sh
 npm install --save ethjs
 ```
 
-`src/web3connection.js`
+建立 `src/web3connection.js` 檔案，內容如下
 
-### 設定合約地址
+```js
+import Eth from 'ethjs'
+
+let eth = null;
+
+if (typeof window.web3 !== 'undefined') {
+  eth = new Eth(window.web3.currentProvider);
+} else {
+  console.log('No web3? You should consider trying MetaMask!')
+  // eth = new Eth(new Eth.HttpProvider('http://localhost:8545'))
+}
+
+export {
+  eth
+}
+```
+
+當網頁中存在`web3`物件，可假設此瀏覽器有支援DApp。我們將透過Ethjs連到瀏覽器/MetaMask擴充功能套件當前所連接的網路。
+
+### App.js
+
+`App.js`內容如下：
+
+```js
+import React, { Component } from 'react';
+import './App.css';
 
 import {eth} from './web3connection';
 import {CONTRACT_ADDRESS} from './constants';
-// Import our contract artifacts and turn them into usable abstractions.
-import CONTRACT_ABI from './lib/HelloToken.json';
+import CONTRACT_JSON from './lib/contracts/HelloToken.json';
+let contract = eth.contract(CONTRACT_JSON.abi);
 
-// HelloToken is our usable abstraction, which we'll use through the code below.
-let contract = eth.contract(CONTRACT_ABI.abi);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      account: '',
+      balance: 0,
+      status: ''
+    };
+  }
 
+  setStateAsync(state) {
+    return new Promise((resolve) => {
+      this.setState(state, resolve)
+    });
+  }
+
+  async componentWillMount() {
+    try {
+      let accounts = await eth.accounts();
+      if (accounts.length === 0) {
+        this.setStateAsync({status: 'There was an error fetching your accounts.'});
+        return;
+      }
+
+      let account = accounts[0];
+      let token = await contract.at(CONTRACT_ADDRESS);
+      let balance = await token.balanceOf(account, {from: account});
+      // let left = await eth.getBalance(account);
+      this.setStateAsync({account, balance: balance.balance.toNumber() / 100});
+    } catch(err) {
+      // console.log(err);
+      this.setStateAsync({status: err});
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1 className="App-title">
+          {this.state.status ? this.state.status : `Balance: ${this.state.balance} H@`}
+          </h1>
+        </header>
+        <p className="App-intro">
+          Account: {this.state.account}<br/>
+        </p>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+#### 講解
+
+```js
+import {eth} from './web3connection';
+import {CONTRACT_ADDRESS} from './constants';
+import CONTRACT_JSON from './lib/contracts/HelloToken.json';
+let contract = eth.contract(CONTRACT_JSON.abi);
+```
+
+設定合約地址。
+
+```js
+async componentWillMount() {
+  try {
+    let accounts = await eth.accounts();
+    if (accounts.length === 0) {
+      this.setStateAsync({status: 'There was an error fetching your accounts.'});
+      return;
+    }
+
+    let account = accounts[0];
+    let token = await contract.at(CONTRACT_ADDRESS);
+    let balance = await token.balanceOf(account, {from: account});
+    // let left = await eth.getBalance(account);
+    this.setStateAsync({account, balance: balance.balance.toNumber() / 100});
+  } catch(err) {
+    // console.log(err);
+    this.setStateAsync({status: err});
+  }
+}
+```
+
+取得帳戶與帳戶餘額。
+
+```js
+render() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">
+        {this.state.status ? this.state.status : `Balance: ${this.state.balance} H@`}
+        </h1>
+      </header>
+      <p className="App-intro">
+        Account: {this.state.account}<br/>
+      </p>
+    </div>
+  );
+}
+```
+
+展示帳戶與餘額。
 
 完成畫面
 

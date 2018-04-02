@@ -3,8 +3,8 @@ import './App.css';
 
 import {eth} from './web3connection';
 import {CONTRACT_ADDRESS} from './constants';
-import CONTRACT_ABI from './lib/HelloToken.json';
-let contract = eth.contract(CONTRACT_ABI.abi);
+import CONTRACT_JSON from './lib/contracts/HelloToken.json';
+let contract = eth.contract(CONTRACT_JSON.abi);
 
 class App extends Component {
   constructor(props) {
