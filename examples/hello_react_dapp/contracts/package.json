@@ -4,7 +4,8 @@
   "description": "hello token example",
   "scripts": {
     "build": "truffle compile && shx cp -R build/contracts* ../web/src/lib",
-    "deploy": "npm run build && truffle migrate"
+    "deploy": "npm run build && truffle migrate",
+    "test": "truffle test"
   },
   "dependencies": {
     "shx": "^0.2.2",
