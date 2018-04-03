@@ -11,7 +11,7 @@ gasolin（蓋索林），開源愛好者，樂於學習與分享Web與移動應�
 * 部落格：http://blog.gasolin.idv.tw/
 * 個人網站：https://gasolin.idv.tw/
 
-### 當前完成度：45%
+### 當前完成度：50%
 
 ### 更新紀錄
 

@@ -34,14 +34,6 @@ API --> 網頁應用
 
 {% mermaid %}
 graph LR
-DApp --- 瀏覽器
-瀏覽器 --- 網站伺服器
-瀏覽器 --- 以太坊區塊鏈
-以太坊區塊鏈 --- 智能合約
-{% endmermaid %}
-
-{% mermaid %}
-graph LR
 
 subgraph 使用者
 瀏覽器[DApp相容瀏覽器]
