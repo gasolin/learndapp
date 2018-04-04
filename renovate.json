@@ -3,11 +3,29 @@
     "config:base"
   ],
   "packageFiles": [
-    "examples/hello_react_dapp/contracts",
-    "examples/hello_react_dapp/web",
-    "examples/hello_standard_token",
-    "examples/hello_token_test",
-    "examples/hello_web3",
-    "examples/hello_webpack"
+    {
+      "packageFile": "examples/hello_react_dapp/contracts/package.json",
+      "pinVersions": false
+    },
+    {
+      "packageFile": "examples/hello_react_dapp/web/package.json",
+      "pinVersions": false
+    },
+    {
+      "packageFile": "examples/hello_standard_token/package.json",
+      "pinVersions": false
+    },
+    {
+      "packageFile": "examples/hello_token_test/package.json",
+      "pinVersions": false
+    },
+    {
+      "packageFile": "examples/hello_web3/package.json",
+      "pinVersions": false
+    },
+    {
+      "packageFile": "examples/hello_webpack/package.json",
+      "pinVersions": false
+    }
   ]
 }
