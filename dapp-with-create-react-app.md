@@ -1,25 +1,26 @@
 ## 使用 React 開發 DApp
 
-我們知道一個DApp專案包含了`智能合約`與`網頁前端`兩個部份。兩者之間僅透過ABI來互動。因此，在之後的章節裡，我們的專案都會包含兩個獨立的資料夾，分別放置`智能合約`(contract)與`網頁前端`(web)的部份。
+就前面的經驗，我們理解一個DApp專案通常包含了`智能合約`與`網頁前端`兩個部份。兩者之間僅透過ABI來互動。因此，在之後的章節裡，我們的專案都會包含兩個獨立的資料夾，分別放置`智能合約`(contract)與`網頁前端`(web)的部份。
 
 {% mermaid %}
 graph LR
 
+subgraph 使用者
+瀏覽器[DApp相容瀏覽器]
+加密代幣錢包
 subgraph 前端
-網頁[網頁]
+網頁[網頁應用]
+end
 end
 
 subgraph ethereum
 Contract[智能合約]
 end
 
-subgraph 使用者
-瀏覽器
-end
-
-網頁 --- 瀏覽器
+網頁 --> 加密代幣錢包
+加密代幣錢包 -- ABI --> Contract
 Contract -- ABI --> 網頁
-網頁 -- ABI --> Contract
+網頁 --- 瀏覽器
 {% endmermaid %}
 
 
@@ -51,7 +52,7 @@ $ truffle migrate
 
 {% mermaid %}
 graph LR
-subgraph local
+subgraph 本地開發機器
 cotracts/cotracts/**.sol -- compile --> bytecode[Contract Bytecode]
 end
 
@@ -59,7 +60,7 @@ subgraph ethereum
 Contract
 end
 
-bytecode -- deploy --> Contract
+bytecode -- migrate --> Contract
 {% endmermaid %}
 
 ## 在 MetaMask 中導入代幣
@@ -99,26 +100,28 @@ npm start
 
 {% mermaid %}
 graph LR
-subgraph 前端
-網頁
-end
-
-subgraph local
-web/src/** -- build --> 網頁1[網頁]
-end
 
 subgraph 使用者
-瀏覽器
+瀏覽器[DApp相容瀏覽器]
+加密代幣錢包
+subgraph 前端
+網頁[網頁應用]
+end
 end
 
 subgraph ethereum
 Contract[智能合約]
 end
 
-Contract --> 網頁
-網頁 --> Contract
-網頁1 -- depoy --> 網頁
+subgraph 本地開發機器
+web/src/** -- build --> 網頁1[網頁]
+end
+
+網頁 --> 加密代幣錢包
+加密代幣錢包 -- ABI --> Contract
+Contract -- ABI --> 網頁
 網頁 --- 瀏覽器
+網頁1 --> 網頁
 {% endmermaid %}
 
 ### 透過網頁連接智能合約
@@ -287,4 +290,5 @@ render() {
 ## 參考資料
 
 * [1] Async Await with React Lifecycle methods https://medium.com/front-end-hacking/async-await-with-react-lifecycle-methods-802e7760d802
-* [2] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_react_dapp
+* [2] Detect global web3 object https://github.com/MetaMask/faq/blob/master/detecting_metamask.md
+* [3] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_react_dapp
