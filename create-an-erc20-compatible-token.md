@@ -4,22 +4,22 @@
 
 ## 開發前的準備
 
-延續上一篇的內容，在開發的過程中，我們將繼續使用`testrpc`[^1]工具在電腦上模擬智能合約所需的乙太坊區塊鏈測試環境。
+延續上一篇的內容，在開發的過程中，我們將繼續使用`ganache-cli`[^1]工具在電腦上模擬智能合約所需的乙太坊區塊鏈測試環境。
 
-首先確保已啟動testrpc。若尚未啟動，可以使用以下命令啟動：
+首先確保已啟動ganache-cli。若尚未啟動，可以使用以下命令啟動：
 
 ```sh
-$ testrpc
+$ ganache-cli
 ...
 ```
 
-這邊有個值得一學的小技巧：在啟動testrpc時加上`--seed`參數，例如
+這邊有個值得一學的小技巧：在啟動ganache-cli時加上`--seed`參數，例如
 
 ```sh
-testrpc --seed apple banana cherry
+ganache-cli --seed apple banana cherry
 ```
 
-這樣之後重新啟動testrpc時可以產生一樣的帳戶(accounts)和私鑰(private key)。
+這樣之後重新啟動ganache-cli時可以產生一樣的帳戶(accounts)和私鑰(private key)。
 
 ## ERC20標準
 
@@ -223,7 +223,7 @@ Saving successful migration to network...
 Saving artifacts...
 ```
 
-如此一來我們已將HelloCoin代幣合約部署到testrpc上。
+如此一來我們已將HelloCoin代幣合約部署到ganache上。
 
 ## 驗證
 
@@ -264,7 +264,7 @@ BigNumber { s: 1, e: 5, c: [ 100000 ] }
 BigNumber { s: 1, e: 0, c: [ 0 ] }
 ```
 
-`web3.eth.coinbase` 代表操作者預設的帳戶，即testrpc所提供的10個帳戶中的第一個帳戶，也可以透過`web3.eth.accounts[0]`取得。
+`web3.eth.coinbase` 代表操作者預設的帳戶，即ganache所提供的10個帳戶中的第一個帳戶，也可以透過`web3.eth.accounts[0]`取得。
 這兩句的目的是在進行轉帳操作前，先查詢前兩個帳戶所擁有的代幣餘額。透過呼叫`balanceOf`函式，可以看到第一個帳戶(部署合約的帳戶)裡存著所有的代幣。
 
 ```
@@ -290,7 +290,7 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 
 ## 參考資料
 
-* [1] https://github.com/ethereumjs/testrpc
+* [1] https://github.com/trufflesuite/ganache-cli
 * [2] ERC20 https://theethereum.wiki/w/index.php/ERC20_Token_Standard 或 https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
 * [3] OpenZeppelin https://github.com/OpenZeppelin/zeppelin-solidity
 * [4] OpenZeppelin Audit https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/audit/ZeppelinAudit.md

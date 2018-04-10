@@ -14,13 +14,13 @@
 
 ## 切換到本地測試網路
 
-首先確保已啟動testrpc。若尚未啟動，可以使用以下命令啟動：
+首先確保已啟動ganache/ganache-cli。若尚未啟動，可以使用以下命令啟動：
 
 ```sh
-testrpc --seed apple banana cherry
+ganache-cli --seed apple banana cherry
 ```
 
-接著回到 MetaTask，點選左上角`Main Network`，將網路切換到testrpc執行的`Localhost 8545`網路上。
+接著回到 MetaTask，點選左上角`Main Network`，將網路切換到ganache執行的`Localhost 8545`網路上。
 
 ![Imgur](https://i.imgur.com/32rikcB.png)
 
@@ -32,7 +32,7 @@ testrpc --seed apple banana cherry
 
 ![Imgur](https://i.imgur.com/0aY0n1s.png)
 
-在畫面上輸入私鑰帳戶(Private Key)，如果你跟我輸入一樣的`testrpc --seed ...`命令，那麼將使用以下的帳戶作為預設的帳戶(testrpc中的account 0)
+在畫面上輸入私鑰帳戶(Private Key)，如果你跟我輸入一樣的`ganache-cli --seed ...`命令，那麼將使用以下的帳戶作為預設的帳戶(ganache中的account 0)
 
 ```
 bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
@@ -44,7 +44,7 @@ bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
 
 ![Imgur](https://i.imgur.com/uwKB3tD.png)
 
-我們可以用同樣步驟匯入第二個帳戶(testrpc中的 account 1)來互相交易代幣。
+我們可以用同樣步驟匯入第二個帳戶(ganache中的 account 1)來互相交易代幣。
 
 ```
 8c90c6365f62ff46b3a04edc5dbae3f401f36a50ce5f6da03ba12c08d8a72478
@@ -60,7 +60,7 @@ bea70301d065cf7946f25251c73dbfff93d4320715e43bdc0d5087553074cb64
 
 ![Imgur](https://i.imgur.com/gbihVdp.png)
 
-當然也可以直接看testrpc中`account 0`的公開地址(Available Account)，如果照本書操作的話公開地址應該是
+當然也可以直接看ganache中`account 0`的公開地址(Available Account)，如果照本書操作的話公開地址應該是
 
 ```
 0x1d489c3f8ed5ee71325a847888b2157c9ac29c05

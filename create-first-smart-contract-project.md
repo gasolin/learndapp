@@ -100,7 +100,7 @@ module.exports = function(deployer) {
 
 ### 區塊網路設定 {#區塊網路設定}
 
-為了與`testrpc`連線，需要打開`truffle.js`檔案並加入以下設定：
+為了與`ganache`連線，需要打開`truffle.js`檔案並加入以下設定：
 
 ```js
 module.exports = {
@@ -116,7 +116,7 @@ module.exports = {
 };
 ```
 
-truffle 使用 Javascript 的 Object 格式來定義設定。這邊定義了`development`(開發用)網路為`localhost:8545`，即testrpc所提供的網路位址。
+truffle 使用 Javascript 的 Object 格式來定義設定。這邊定義了`development`(開發用)網路為`localhost:8545`，即ganache所提供的網路位址。
 
 ### 部署 {#部署-v2}
 
@@ -137,7 +137,7 @@ Saving artifacts...
 
 ```
 
-如此一來合約已經部署到testrpc中。切換到testrpc視窗，可以看到testrpc有反應了。
+如此一來合約已經部署到ganache中。切換到ganache視窗，可以看到ganache有反應了。
 
 ### 與合約互動 {#與合約互動}
 

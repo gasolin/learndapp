@@ -65,7 +65,7 @@ bytecode -- migrate --> Contract
 
 ## 在 MetaMask 中導入代幣
 
-照前面章節說明在MetaMask中加入`testrpc`或`ganache`的預設帳戶，並輸入合約地址以加入自訂的`HelloToekn`代幣。
+照前面章節說明在MetaMask中加入`ganache`的預設帳戶，並輸入合約地址以加入自訂的`HelloToekn`代幣。
 
 ![Imgur](https://i.imgur.com/hSruOUQl.png)
 
@@ -291,4 +291,5 @@ render() {
 
 * [1] Async Await with React Lifecycle methods https://medium.com/front-end-hacking/async-await-with-react-lifecycle-methods-802e7760d802
 * [2] Detect global web3 object https://github.com/MetaMask/faq/blob/master/detecting_metamask.md
+* Calling a Smart Contract With a Button https://medium.com/metamask/calling-a-smart-contract-with-a-button-d278b1e76705
 * [3] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_react_dapp

@@ -46,11 +46,11 @@ Using network 'development'.
 Network up to date.
 ```
 
-Truffle會告訴你現在網路上的合約都已是最新的，但事實上剛剛程式中新增的方法並沒有更新到區塊鏈上。要更新區塊鏈上已部署的程式，需要改寫`migrations`中的腳本，但現在還不到介紹migration的時候。還好我們開發用的區塊鏈是怎麼修改都沒關係的testrpc，可以使用`truffle migrate --reset`命令直接重新在testrpc上部署一次🎉。
+Truffle會告訴你現在網路上的合約都已是最新的，但事實上剛剛程式中新增的方法並沒有更新到區塊鏈上。要更新區塊鏈上已部署的程式，需要改寫`migrations`中的腳本，但現在還不到介紹migration的時候。還好我們開發用的區塊鏈是怎麼修改都沒關係的ganache-cli，可以使用`truffle migrate --reset`命令直接重新在ganache-cli上部署一次🎉。
 
 ## 使用truffle develop命令 {#使用truffle-develop命令}
 
-truffle 4.0.0 版本之後加入了`truffle develop`命令。這個命令讓我們不需要另外安裝testrpc等環境，就能直接上手開發。
+truffle 4.0.0 版本之後加入了`truffle develop`命令。這個命令讓我們不需要另外安裝ganache-cli等環境，就能直接上手開發。
 
 例如
 

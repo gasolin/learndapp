@@ -4,12 +4,12 @@
 
 ## 開發前的準備
 
-延續上一篇的內容，在開發的過程中，我們將繼續使用`testrpc`[^1]工具在電腦上模擬智能合約所需的乙太坊區塊鏈測試環境。
+延續上一篇的內容，在開發的過程中，我們將繼續使用`ganache-cli`[^1]工具在電腦上模擬智能合約所需的乙太坊區塊鏈測試環境。
 
-首先確保已啟動testrpc，若尚未啟動，可以使用以下命令啟動
+首先確保已啟動ganache-cli，若尚未啟動，可以使用以下命令啟動
 
 ```sh
-$ testrpc
+$ ganache-cli
 ...
 ```
 
@@ -160,7 +160,7 @@ Saving successful migration to network...
 Saving artifacts...
 ```
 
-如此一來我們已將`SimpleToken`代幣合約部署到testrpc上。
+如此一來我們已將`SimpleToken`代幣合約部署到ganache上。
 
 ## 驗證
 
@@ -199,7 +199,7 @@ BigNumber { s: 1, e: 4, c: [ 10000 ] }
 BigNumber { s: 1, e: 0, c: [ 0 ] }
 ```
 
-還記得啟動testrpc後預設會產生10個帳戶(Accounts)嗎?。`web3.eth.coinbase` 代表操作者預設的帳戶，即10帳戶的第一個帳戶`web3.eth.accounts[0]`，所以這邊呼叫`web3.eth.coinbase`或`web3.eth.accounts[0]`結果是一樣的。
+還記得啟動ganache後預設會產生10個帳戶(Accounts)嗎?。`web3.eth.coinbase` 代表操作者預設的帳戶，即10帳戶的第一個帳戶`web3.eth.accounts[0]`，所以這邊呼叫`web3.eth.coinbase`或`web3.eth.accounts[0]`結果是一樣的。
 
 ```sh
 > contract.balanceOf(web3.eth.accounts[0])
@@ -243,7 +243,7 @@ BigNumber { s: 1, e: 2, c: [ 123 ] }
 
 ## 參考資料
 
-* [1] https://github.com/ethereumjs/testrpc
+* [1] https://github.com/trufflesuite/ganache-cli
 * [2] Units and Globally Available Variables http://solidity.readthedocs.io/en/develop/units-and-global-variables.html
 * [3] An Ethereum Hello World Smart Contract for Beginners [part 1](http://www.talkcrypto.org/blog/2017/04/17/an-ethereum-hello-world-smart-contract-for-beginners-part-1/), [part 2](http://www.talkcrypto.org/blog/2017/04/22/an-ethereum-hello-world-smart-contract-for-beginners-part-2/)
 * [4] Onward with Ethereum Smart Contract Security https://blog.zeppelin.solutions/onward-with-ethereum-smart-contract-security-97a827e47702

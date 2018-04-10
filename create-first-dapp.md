@@ -6,12 +6,12 @@
 
 ## 整個測試環境
 
-在開始寫DApp之前，我們需要有個網頁伺服器來放DApp，瀏覽器上需安裝好`MetaMask`錢包，並開啟`testrpc`本地測試網路。
+在開始寫DApp之前，我們需要有個網頁伺服器來放DApp，瀏覽器上需安裝好`MetaMask`錢包，並開啟`ganache-cli`本地測試網路。
 實際的架構如下：
 
 {% mermaid %}
 graph TB
-瀏覽器 --- testrpc
+瀏覽器 --- ganache
 DApp --- 瀏覽器
 subgraph  網頁伺服器
     DApp
@@ -20,18 +20,18 @@ subgraph  本地
     加密代幣錢包  --- 瀏覽器
 end
 subgraph  遠端
-    testrpc
+    ganache
 end
 {% endmermaid %}
 
-除了網頁伺服器的部分之外，閱讀完前面章節的讀者，對`MetaMask`錢包和`testrpc`應該都已有經驗。
+除了網頁伺服器的部分之外，閱讀完前面章節的讀者，對`MetaMask`錢包和`ganache`應該都已有經驗。
 
 ## 設定環境
 
-首先確保已啟動testrpc。若尚未啟動，可以使用以下命令啟動：
+首先確保已啟動ganache/ganache-cli。若尚未啟動，可以使用以下命令啟動：
 
 ```sh
-testrpc --seed apple banana cherry
+ganache-cli --seed apple banana cherry
 ```
 
 開啟一個新資料夾`hello_web3`，並加入`package.json`檔案：

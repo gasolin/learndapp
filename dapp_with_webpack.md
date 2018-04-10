@@ -1,13 +1,13 @@
 # 使用 Webpack 編譯 DApp
 
-用純HTML5手刻DApp固然可行，但更多的網頁開發者會選擇使用諸如`Webpack`等編譯工具來提昇開發體驗。使用`truffle unbox webpack`命令可以建立一個可運作的Weboack DApp。本書後續的DApp架構並不會再直接使用Webpack/web3.js，而會改用`create-react-app`(React)和`Ethjs`。因此本文只會專注在DApp相關部份，不會介紹Webpack的使用與設定細節，讀者可另行找到許多參考資料。
+用純HTML5手刻DApp固然可行，但更多的網頁開發者會選擇使用諸如`Webpack`等編譯工具來提昇開發體驗。使用`truffle unbox webpack`命令可以建立一個可運作的Weboack DApp。本書後續的DApp架構並不會再直接使用Webpack/web3.js，而會改用`create-react-app`(React)和`Ethjs`。因為手工維護Webpack設定的缺點，就是當Webpack和相關模組版本更新時需要跟著去手動更新和調整設定。因此本文只會專注在DApp相關部份，不會介紹Webpack的使用與設定細節，有興趣的讀者可另行找到許多Webpack相關參考資料。
 
 ## 設定環境
 
-首先確保已啟動testrpc。若尚未啟動，可以使用以下命令啟動：
+首先確保已啟動ganache/ganache-cli。若尚未啟動，可以使用以下命令啟動：
 
 ```sh
-testrpc --seed apple banana cherry
+ganache-cli --seed apple banana cherry
 ```
 
 ## 建立專案
@@ -22,7 +22,7 @@ $ truffle unbox webpack
 
 `truffle unbox webpack`命令會指定truffle下載webpack模板(box)[^1]來初始化專案。
 
-專案建立好後，將`truffle.js`中的port設定修改為和之前專案一樣的`8545`，執行`truffle migrate`命令，將專案部署到`testrpc`本地測試網路上。
+專案建立好後，將`truffle.js`中的port設定修改為和之前專案一樣的`8545`，執行`truffle migrate`命令，將專案部署到`ganache`本地測試網路上。
 
 接著我們用`npm install`來安裝專案所需的套件，再透過`npm run dev`命令啟動Webpack測試伺服器：
 
@@ -125,6 +125,7 @@ return meta.transfer(receiver, amount, {from: account});
 ![Imgur](https://i.imgur.com/axQa9FA.png)
 
 有了DApp代幣轉帳介面之後，連發代幣都變得簡單了！
+
 
 ## 參考資料
 
