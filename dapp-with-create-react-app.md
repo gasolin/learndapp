@@ -140,26 +140,64 @@ export const CONTRACT_ADDRESS = '0x345cA3e014Aaf5dcA488057592ee47305D9B3e10';
 npm install --save ethjs
 ```
 
-建立 `src/web3connection.js` 檔案，內容如下
+建立 `src/web3utils.js` 檔案，內容如下
 
 ```js
+// ethjs wrap
 import Eth from 'ethjs'
 
-let eth = null;
+let web3 = null;
+let accounts = [];
 
 if (typeof window.web3 !== 'undefined') {
-  eth = new Eth(window.web3.currentProvider);
+  web3 = new Eth(window.web3.currentProvider);
+
+  // get accounts
+  web3.accounts().then(accs => {
+    accounts = accs;
+  });
 } else {
-  console.log('No web3? You should consider trying MetaMask!')
-  // eth = new Eth(new Eth.HttpProvider('http://localhost:8545'))
+  console.error('No web3? You should consider trying MetaMask!');
 }
 
 export {
-  eth
+  accounts,
+  web3
 }
 ```
 
-當網頁中存在`web3`物件，可假設此瀏覽器有支援DApp。我們將透過Ethjs連到瀏覽器/MetaMask擴充功能套件當前所連接的網路。
+#### 講解
+
+```js
+if (typeof window.web3 !== 'undefined') {}
+```
+
+當網頁中存在`window.web3`物件，可假設此瀏覽器支援DApp。
+
+```js
+web3 = new Eth(window.web3.currentProvider);
+```
+
+這時我們可透過`web3.js`或`Ethjs`協助我們連到瀏覽器/MetaMask擴充功能套件當前所連接的網路(即`window.web3.currentProvider`)。
+
+```js
+web3.accounts().then(accs => {
+  accounts = accs;
+});
+```
+
+因為所有會改變區塊鏈上狀態的交易都需要附上來源帳戶地址，因此在這邊順便取得本機的所有帳戶。
+
+```
+export {
+  accounts,
+  web3
+}
+```
+
+最後匯出`accounts`和`web3`，在`component`中可透過`import { accounts, web3 } from '../web3utils'`取得web3和本機的所有帳戶。
+
+
 
 ### App.js
 
@@ -169,10 +207,9 @@ export {
 import React, { Component } from 'react';
 import './App.css';
 
-import {eth} from './web3connection';
+import { accounts, web3 } from './web3utils';
 import {CONTRACT_ADDRESS} from './constants';
 import CONTRACT_JSON from './lib/contracts/HelloToken.json';
-let contract = eth.contract(CONTRACT_JSON.abi);
 
 class App extends Component {
   constructor(props) {
@@ -192,19 +229,16 @@ class App extends Component {
 
   async componentWillMount() {
     try {
-      let accounts = await eth.accounts();
       if (accounts.length === 0) {
         this.setStateAsync({status: 'There was an error fetching your accounts.'});
         return;
       }
 
       let account = accounts[0];
-      let token = await contract.at(CONTRACT_ADDRESS);
+      let token = eth.contract(CONTRACT_JSON.abi).at(CONTRACT_ADDRESS);
       let balance = await token.balanceOf(account, {from: account});
-      // let left = await eth.getBalance(account);
       this.setStateAsync({account, balance: balance.balance.toNumber() / 100});
     } catch(err) {
-      // console.log(err);
       this.setStateAsync({status: err});
     }
   }
@@ -231,55 +265,42 @@ export default App;
 #### 講解
 
 ```js
-import {eth} from './web3connection';
-import {CONTRACT_ADDRESS} from './constants';
-import CONTRACT_JSON from './lib/contracts/HelloToken.json';
-let contract = eth.contract(CONTRACT_JSON.abi);
+import { accounts, web3 } from './web3utils';
 ```
 
-設定合約地址。
+取得web3和本機的所有帳戶。
 
 ```js
-async componentWillMount() {
-  try {
-    let accounts = await eth.accounts();
-    if (accounts.length === 0) {
-      this.setStateAsync({status: 'There was an error fetching your accounts.'});
-      return;
-    }
+import {CONTRACT_ADDRESS} from './constants';
+import CONTRACT_JSON from './lib/contracts/HelloToken.json';
+```
 
-    let account = accounts[0];
-    let token = await contract.at(CONTRACT_ADDRESS);
-    let balance = await token.balanceOf(account, {from: account});
-    // let left = await eth.getBalance(account);
-    this.setStateAsync({account, balance: balance.balance.toNumber() / 100});
-  } catch(err) {
-    // console.log(err);
-    this.setStateAsync({status: err});
-  }
+取得合約地址和從`truffle`編譯得到的JSON資料。
+
+```js
+class App extends Component {
+  constructor(props) {}
+  componentWillMount()
+  render()
 }
+```
+
+透過 class 語句宣告 React 元件(component)。在`constructor`建構函式中加入預設值。在`render`函式中定義網頁介面來展示帳戶與餘額。`componentWillMount`是React提供的預設lifecycle函式之一[^4]，可在元件實際顯示前預先執行一些動作。
+
+
+```js
+let token = eth.contract(CONTRACT_JSON.abi).at(CONTRACT_ADDRESS);
+```
+
+JSON資料中存有此合約的ABI。可透過`eth.contract`函式將ABI轉換成易於使用的API。透過`at`可設定呼叫此合約的地址。
+
+```js
+let balance = await token.balanceOf(account, {from: account});
+this.setStateAsync({account, balance: balance.balance.toNumber() / 100});
 ```
 
 取得帳戶與帳戶餘額。
 
-```js
-render() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">
-        {this.state.status ? this.state.status : `Balance: ${this.state.balance} H@`}
-        </h1>
-      </header>
-      <p className="App-intro">
-        Account: {this.state.account}<br/>
-      </p>
-    </div>
-  );
-}
-```
-
-展示帳戶與餘額。
 
 完成畫面
 
@@ -292,4 +313,6 @@ render() {
 * [1] Async Await with React Lifecycle methods https://medium.com/front-end-hacking/async-await-with-react-lifecycle-methods-802e7760d802
 * [2] Detect global web3 object https://github.com/MetaMask/faq/blob/master/detecting_metamask.md
 * Calling a Smart Contract With a Button https://medium.com/metamask/calling-a-smart-contract-with-a-button-d278b1e76705
-* [3] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_react_dapp
+* [3] Ethjs User Guide https://github.com/ethjs/ethjs/blob/master/docs/user-guide.md
+* [4] React Lifecycle https://reactjs.org/docs/react-component.html
+* [5] 範例網址 https://github.com/gasolin/learndapp/tree/master/examples/hello_react_dapp

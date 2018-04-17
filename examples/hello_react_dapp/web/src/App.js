@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import {eth} from './web3connection';
+import {
+  accounts,
+  web3
+} from './web3utils';
 import {CONTRACT_ADDRESS} from './constants';
 import CONTRACT_JSON from './lib/contracts/HelloToken.json';
-let contract = eth.contract(CONTRACT_JSON.abi);
 
 class App extends Component {
   constructor(props) {
@@ -24,19 +26,16 @@ class App extends Component {
 
   async componentWillMount() {
     try {
-      let accounts = await eth.accounts();
       if (accounts.length === 0) {
         this.setStateAsync({status: 'There was an error fetching your accounts.'});
         return;
       }
 
       let account = accounts[0];
-      let token = await contract.at(CONTRACT_ADDRESS);
+      let token = web3.contract(CONTRACT_JSON.abi).at(CONTRACT_ADDRESS);
       let balance = await token.balanceOf(account, {from: account});
-      // let left = await eth.getBalance(account);
-      this.setStateAsync({account, balance: balance.balance.toNumber() / 100});
+      this.setStateAsync({account, balance: balance.balance.toNumber() / 100, status: ''});
     } catch(err) {
-      // console.log(err);
       this.setStateAsync({status: err});
     }
   }

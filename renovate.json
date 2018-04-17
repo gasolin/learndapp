@@ -4,6 +4,10 @@
   ],
   "packageFiles": [
     {
+      "packageFile": "package.json",
+      "pinVersions": false
+    },
+    {
       "packageFile": "examples/hello_react_dapp/contracts/package.json",
       "pinVersions": false
     },
