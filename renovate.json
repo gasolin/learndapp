@@ -2,7 +2,7 @@
   "extends": [
     "config:base"
   ],
-  "packageFiles": [
+  "packageRules": [
     {
       "packageFile": "package.json",
       "pinVersions": false
