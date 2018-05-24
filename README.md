@@ -1,12 +1,11 @@
-# Ethereum區塊鏈！智能合約\(Smart Contract\)與分散式網頁應用\(DApp\)入門
+# Ethereum區塊鏈！智能合約\(Smart Contract\)與分散式網頁應用\(dApp\)入門
 
-本書介紹了基於乙太坊的智能合約\(Smart Contract\)和分散式網頁應用\(DApp\)。
+本書介紹了基於乙太坊的智能合約\(Smart Contract\)和分散式網頁應用\(dApp\)。
 
 ## 作者簡介
 
 gasolin（蓋索林），開源愛好者，樂於學習與分享Web與移動應用相關技術。著有「Google! Android 手機應用程式設計入門」等[多本著作](https://gasolin.idv.tw/portfolio#books)。
 
-現正尋找可遠端工作(Remote Work)的*區塊鏈/前端*相關機會。
 
 * 部落格：http://blog.gasolin.idv.tw/
 * 個人網站：https://gasolin.idv.tw/

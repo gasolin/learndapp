@@ -39,6 +39,3 @@
 * [1] ERC20  [https://theethereum.wiki/w/index.php/ERC20\_Token\_Standard](https://theethereum.wiki/w/index.php/ERC20_Token_Standard)
 * [2] Solidity [http://solidity.readthedocs.io/en/latest/index.html](https://solidity.readthedocs.io/en/latest/index.html)
 * [3] migration contracts [http://truffleframework.com/docs/getting\_started/migrations](http://truffleframework.com/docs/getting_started/migrations)
-
-
-

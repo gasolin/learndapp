@@ -67,6 +67,7 @@ P2P --- 網際網路
 ## 參考資料 {#其他參考資料}
 
 * 以太坊設計原理 [http://ethfans.org/posts/510](http://ethfans.org/posts/510)
+* 以太坊工作原理https://lilymoana.github.io/ethereum_theory.html
 * ethereum [https://github.com/ethereum/wiki/wiki](https://github.com/ethereum/wiki/wiki)
 * 挖礦教學 [https://www.ptt.cc/bbs/DigiCurrency/M.1495624721.A.6A8.html](https://www.ptt.cc/bbs/DigiCurrency/M.1495624721.A.6A8.html)
 * 以太坊、以太幣是什麼？ETH電腦挖礦圖文教程[http://www.gooread.com/article/20122396003/](http://www.gooread.com/article/20122396003/)

@@ -41,19 +41,18 @@ P2P --- 網際網路
 
 ## 參考資料 {#參考資料}
 
-* [1] 比特幣 [https://zh.wikipedia.org/wiki/比特币](https://zh.wikipedia.org/wiki/比特币)
-* [2] 以太坊 [https://zh.wikipedia.org/wiki/以太坊](https://zh.wikipedia.org/wiki/以太坊)
-* [3] 首次公開發行加密代幣 [https://zh.wikipedia.org/wiki/首次代币发售](https://zh.wikipedia.org/wiki/首次代币发售)
-* [4] 區塊鏈[https://zh.wikipedia.org/wiki/区块链](https://zh.wikipedia.org/wiki/区块链)
-* [5] Napster  [https://en.wikipedia.org/wiki/Napster](https://en.wikipedia.org/wiki/Napster)
-* [6] BitTorrent [https://en.wikipedia.org/wiki/BitTorrent](https://en.wikipedia.org/wiki/BitTorrent)
-* [7] 磁力連結 [https://zh.wikipedia.org/wiki/磁力链接](https://zh.wikipedia.org/wiki/磁力链接)
+* [1] 比特幣 https://zh.wikipedia.org/wiki/比特币
+* [2] 以太坊 https://zh.wikipedia.org/wiki/以太坊
+* [3] 首次公開發行加密代幣 https://zh.wikipedia.org/wiki/首次代币发售
+* [4] 區塊鏈 https://zh.wikipedia.org/wiki/区块链
+* [5] Napster  https://en.wikipedia.org/wiki/Napster
+* [6] BitTorrent https://en.wikipedia.org/wiki/BitTorrent
+* [7] 磁力連結 https://zh.wikipedia.org/wiki/磁力链接
 * [8] [What Are Magnet Links, and How Do I Use Them to Download Torrents?](https://lifehacker.com/5875899/what-are-magnet-links-and-how-do-i-use-them-to-download-torrents)
-* [9] [https://www.hyperledger.org/](https://www.hyperledger.org/)
-* [10] [https://entethalliance.org/](https://entethalliance.org/)
-* [11] [https://en.wikipedia.org/wiki/Proof-of-work\_system](https://en.wikipedia.org/wiki/Proof-of-work_system)
-* [12] How Bitcoin Works Under the Hood
-  [https://www.youtube.com/watch?v=Lx9zgZCMqXE](https://www.youtube.com/watch?v=Lx9zgZCMqXE)
+* [9] https://www.hyperledger.org/
+* [10] https://entethalliance.org/
+* [11] https://en.wikipedia.org/wiki/Proof-of-work_system
+* [12] How Bitcoin Works Under the Hood  https://www.youtube.com/watch?v=Lx9zgZCMqXE
 * [13] TED [How the blockchain will radically transform the economy](https://www.youtube.com/watch?v=RplnSVTzvnU)
 * [14] [Blockchain 101 - A Visual Demo](https://youtu.be/_160oMzblY8)
 * [15] [Block Chain Demo網站](https://anders.com/blockchain/)
