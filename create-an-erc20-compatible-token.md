@@ -33,7 +33,7 @@ ganache-cli --seed apple banana cherry
 {
   "name": "hellotoken",
   "version": "1.0.0",
-  "description": "hello token example",
+  "description": "hello token example"
 }
 ```
 
