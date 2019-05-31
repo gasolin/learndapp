@@ -34,7 +34,7 @@ $ npm install -g truffle ganache-cli
 
 ```sh
 $ ganache-cli
-Ganache CLI v6.1.0 (ganache-core: 2.1.0)
+Ganache CLI v6.4.3 (ganache-core: 2.5.5)
 
 Available Accounts
 ==================

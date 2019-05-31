@@ -1,4 +1,4 @@
-# 建立第一個智能合約專案 {#建立專案}
+# 建立第一個智能合約專案
 
 開啟另一個命令列視窗，輸入以下命令以建立專案：
 
@@ -24,7 +24,7 @@ contract HelloWorld {
 }
 ```
 
-### 講解 {#講解}
+### 講解
 
 將程式碼定義的合約畫成UML圖如下
 
@@ -69,7 +69,7 @@ function sayHello() public returns (string) {
 
 solidity官方推薦的縮排風格為4個空格[^5]。
 
-## 編譯 {#編譯}
+## 編譯
 
 現在執行`truffle compile`命令，我們可以將`HelloWorld.sol`原始碼編譯成Ethereum bytecode。
 
@@ -79,11 +79,11 @@ $ truffle compile
 
 編譯成功的話，在`build/contracts/`目錄下會多出`HelloWorld.json`這個檔案。（在Windows平台上執行truffle compile若遇到問題，可以查看參考資料[^1]來解決。）
 
-## 部署 {#部署}
+## 部署
 
 為了將寫好的solidity程式碼部署到區塊鏈上，我們需要做一些相應的設定。
 
-### 遷移 {#遷移}
+### 遷移
 
 truffle框架中提供了方便部署合約的腳本。我們可以在`migrations/`目錄下維護這些腳本。這些腳本除了能部署合約，也可以用來遷移合約中的資料。建立`migrations/2_deploy_contracts.js`檔案\(這些腳本使用Javascript撰寫\)，將內容修改如下
 
@@ -99,7 +99,7 @@ module.exports = function(deployer) {
 
 在檔案中可使用`artifacts.require`語句來取得準備部署的合約。使用`deployer.deploy`語句將合約部署到區塊鏈上。這邊`HelloWorld`是`contract`的名稱而不是檔名。因此可以用此語法讀入任一`.sol`檔案中的任一合約。
 
-### 區塊網路設定 {#區塊網路設定}
+### 區塊網路設定
 
 為了與`ganache`連線，需要打開`truffle.js`檔案並加入以下設定：
 
@@ -140,7 +140,7 @@ Saving artifacts...
 
 如此一來合約已經部署到ganache中。切換到ganache視窗，可以看到ganache有反應了。
 
-### 與合約互動 {#與合約互動}
+### 與合約互動
 
 truffle提供命令行工具，執行`truffle console`命令後，可用Javascript來呼叫剛剛部署的合約。
 
@@ -180,7 +180,7 @@ HelloWorld.deployed().then(function(instance) {
 
 如此一來，我們已寫好並部署完成了第一個智能合約，也驗證了合約確實可以運作。
 
-## 參考資料 {#參考資料}
+## 參考資料
 
 * [1]  Truffle issue on windows http://truffleframework.com/docs/advanced/configuration#resolving-naming-conflicts-on-windows
 * [2] Solidity支援的型別\(Type\) [https://solidity.readthedocs.io/en/develop/types.html](https://solidity.readthedocs.io/en/develop/types.html)
