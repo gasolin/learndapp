@@ -30,25 +30,25 @@ $ truffle create contract SimpleToken
 `SimpleToken.sol`檔案內容如下：
 
 ```
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 
 contract SimpleToken {
-  uint256 INITIAL_SUPPLY = 10000;
-  mapping(address => uint256) balances;
+  uint INITIAL_SUPPLY = 10000;
+  mapping(address => uint) balances;
 
   function SimpleToken() public {
     balances[msg.sender] = INITIAL_SUPPLY;
   }
 
   // transfer token for a specified address
-  function transfer(address _to, uint256 _amount) public {
+  function transfer(address _to, uint _amount) public {
     require(balances[msg.sender] > _amount);
     balances[msg.sender] -= _amount;
     balances[_to] += _amount;
   }
 
   // Gets the balance of the specified address
-  function balanceOf(address _owner) public constant returns (uint256) {
+  function balanceOf(address _owner) public constant returns (uint) {
     return balances[_owner];
   }
 }
@@ -61,7 +61,7 @@ contract SimpleToken {
 
 {% plantuml %}
 class SimpleToken {
-  INITIAL_SUPPLY : uint256
+  INITIAL_SUPPLY : uint
   balances : map
 + transfer()
 + balanceOf()
@@ -69,19 +69,19 @@ class SimpleToken {
 {% endplantuml %}
 
 ```
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 ```
 
 第一行指名目前使用的solidity版本，不同版本的solidity可能會編譯出不同的bytecode。
 
 ```
-uint256 INITIAL_SUPPLY = 10000;
-mapping(address => unit256) balances;
+uint INITIAL_SUPPLY = 10000;
+mapping(address => unit) balances;
 ```
 
-我們定義了初始代幣數目`INITIAL_SUPPLY`。這邊隨意選擇了一個數字`10000`。
+我們定義了初始代幣數目`INITIAL_SUPPLY`。這邊隨意選擇了一個數字`10000`。`uint`是很常用來儲存`正整數`的型別，等同於`uint256`，可以儲存256位元(bit)的資料，其他類似的還有`uint8`，`uint16`，`uint32`等。
 
-我們用`mapping`來定義一個可以儲存鍵值對(key-value pair)的資料結構(類似Javascript中的`{"0xaabbccddeeff": 888}`)，同時也需要分別指定`address`作為鍵的型別，指定`uint256`作為值的型別。和Javascript不同，型別定義好後不能隨時更改要儲存的型別。
+我們用`mapping`來定義一個可以儲存鍵值對(key-value pair)的資料結構(類似Javascript中的`{"0xaabbccddeeff": 888}`)，同時也需要分別指定`address`作為鍵的型別，指定`uint`作為值的型別。和 Javascript 不同之處，在於 Solidity 中定義好型別後，並不能隨時更改之後要儲存的型別。
 
 ```
 contract SimpleToken {
@@ -95,7 +95,7 @@ contract SimpleToken {
 `msg`是一個全域(Global)物件[^2]，`msg.sender`表示用作呼叫當前函式的帳戶。由於建構函式只有在合約部署時會被執行，因此這邊用到的`msg.sender`，也就代表著用來部署這個合約的帳戶。
 
 ```
-function transfer(address _to, uint256 _amount) public {
+function transfer(address _to, uint _amount) public {
   require(balances[msg.sender] > _amount);
   balances[msg.sender] -= _amount;
   balances[_to] += _amount;

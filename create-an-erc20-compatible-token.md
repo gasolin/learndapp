@@ -56,7 +56,7 @@ $ truffle create contract HelloToken
 `HelloToken.sol`檔案內容如下：
 
 ```
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 import "zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 
 contract HelloToken is StandardToken {
@@ -116,7 +116,7 @@ class HelloToken {
 {% endplantuml %}
 
 ```
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 ```
 
 第一行指名目前使用的solidity版本，不同版本的solidity可能會編譯出不同的bytecode。

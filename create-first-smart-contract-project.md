@@ -15,7 +15,7 @@ $ truffle init
 `HelloWorld.sol`檔案內容如下：
 
 ```
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 
 contract HelloWorld {
     function sayHello() public returns (string) {
@@ -35,7 +35,7 @@ class HelloWorld {
 {% endplantuml %}
 
 ```
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 ```
 
 第一行指名目前使用的solidity版本，不同版本的solidity可能會編譯出不同的bytecode。
@@ -44,8 +44,9 @@ pragma solidity ^0.4.11;
 
 ```sh
 $ truffle version
-Truffle v4.0.5 (core: 4.0.5)
-Solidity v0.4.18 (solc-js)
+Truffle v5.0.20 (core: 5.0.20)
+Solidity v0.5.0 (solc-js)
+...
 ```
 
 ```

@@ -1,4 +1,4 @@
-pragma solidity ^0.4.11;
+pragma solidity ^0.4.19;
 
 contract SimpleToken {
   uint256 INITIAL_SUPPLY = 10000;

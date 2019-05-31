@@ -1,4 +1,4 @@
-# 使用solidity語言撰寫智能合約 {#使用solidity語言撰寫智能合約}
+# 使用solidity語言撰寫智能合約
 
 前幾章介紹了智能合約📒是什麼，也概略描述了從編譯到部署智能合約的流程，接下來將介紹如何使用solidity語言來寫智能合約。
 
@@ -10,7 +10,7 @@ Ethereum上的智能合約需要使用`solidity`[^1]語言來撰寫。雖然還�
 
 圍繞著solidity的各種開發工具鏈，都是使用屬於Javascript生態系的npm來提供的。在後續開發DApp時，能運用同一套建構(Build)環境的優勢就突顯出來了。
 
-## 開發前的準備 {#開發前的準備}
+## 開發前的準備
 
 本文將使用當前最活躍的智能合約開發框架`truffle`[^3]為基礎來開發。目前多數智能合約皆採用truffle框架開發。其他選擇還有`embark`[^4]等。
 
@@ -20,7 +20,7 @@ Ethereum上的智能合約需要使用`solidity`[^1]語言來撰寫。雖然還�
 
 此外，開發前還需準備一個合手的編輯器。我目前是使用[Visual Studio Code](https://code.visualstudio.com)搭配[solidity](https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity)插件來開發。solidity插件除了支援語法高亮之外，也會透過Solium[^11]檢查並提示基本的語法錯誤，相當方便。其他編輯器應該也有類似的插件可選擇。
 
-### 安裝所需工具 {#安裝所需工具}
+### 安裝所需工具
 
 首先開發機上必須裝好Node.js，再使用以下命令安裝所需的工具：
 
