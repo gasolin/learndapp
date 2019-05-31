@@ -26,7 +26,7 @@
   "homepage": "https://github.com/gasolin/learndapp#readme",
   "dependencies": {
     "gitbook": "3.2.3",
-    "gitbook-plugin-chart": "0.2.0",
+    "gitbook-plugin-chart": "^0.2.2",
     "gitbook-plugin-mermaid": "0.0.9",
     "gitbook-plugin-puml": "1.0.1",
     "gitbook-plugin-rss": "3.0.2"
