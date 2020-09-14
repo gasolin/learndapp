@@ -1,34 +1,35 @@
 {
   "name": "learndapp",
-  "version": "0.4.3",
-  "description": "learn ethereum smart contract and dapp",
-  "main": "index.js",
-  "directories": {
-    "example": "examples"
-  },
-  "scripts": {
-    "release": "npx standard-version",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gasolin/learndapp.git"
-  },
-  "keywords": [
-    "solidity",
-    "dapp"
-  ],
+  "version": "0.5.0",
   "author": "Fred Lin",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/gasolin/learndapp/issues"
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve"
   },
-  "homepage": "https://github.com/gasolin/learndapp#readme",
   "dependencies": {
-    "gitbook": "3.2.3",
-    "gitbook-plugin-chart": "^0.2.2",
-    "gitbook-plugin-mermaid": "0.0.9",
-    "gitbook-plugin-puml": "1.0.1",
-    "gitbook-plugin-rss": "3.0.2"
+    "@docusaurus/core": "2.0.0-alpha.64",
+    "@docusaurus/preset-classic": "2.0.0-alpha.64",
+    "@mdx-js/react": "^1.5.8",
+    "clsx": "^1.1.1",
+    "mermaid": "^8.8.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

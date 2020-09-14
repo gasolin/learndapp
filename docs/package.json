@@ -1,0 +1,34 @@
+{
+  "name": "learndapp",
+  "version": "0.4.3",
+  "description": "learn ethereum smart contract and dapp",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "release": "npx standard-version",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gasolin/learndapp.git"
+  },
+  "keywords": [
+    "solidity",
+    "dapp"
+  ],
+  "author": "Fred Lin",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/gasolin/learndapp/issues"
+  },
+  "homepage": "https://github.com/gasolin/learndapp#readme",
+  "dependencies": {
+    "gitbook": "3.2.3",
+    "gitbook-plugin-chart": "^0.2.2",
+    "gitbook-plugin-mermaid": "0.0.9",
+    "gitbook-plugin-puml": "1.0.1",
+    "gitbook-plugin-rss": "3.0.2"
+  }
+}
