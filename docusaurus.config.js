@@ -1,4 +1,4 @@
-const remarkMermaid = require('remark-mermaid');
+// const remarkMermaid = require('remark-mermaid');
 
 module.exports = {
   title: '智能合約(Smart Contract)與分散式網頁應用(DApp)入門',
@@ -91,9 +91,9 @@ module.exports = {
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
           routeBasePath: '/',
-          remarkPlugins: [
-            [remarkMermaid, { simple : true }]
-          ]
+          // remarkPlugins: [
+          //   [remarkMermaid, { simple : true }]
+          // ]
         },
         // blog: {
         //   showReadingTime: true,
@@ -103,6 +103,7 @@ module.exports = {
         // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+          mermaid: require.resolve('./src/theme/Mermaid.js')
         },
       },
     ],
