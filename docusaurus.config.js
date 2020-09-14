@@ -3,12 +3,12 @@
 module.exports = {
   title: '智能合約(Smart Contract)與分散式網頁應用(DApp)入門',
   tagline: 'Ethereum區塊鏈！智能合約(Smart Contract)與分散式網頁應用(dApp)入門',
-  url: 'http://gasolin.github.io/learndapp',
-  baseUrl: '/',
+  url: 'http://gasolin.github.io',
+  baseUrl: '/learndapp/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'gasolin', // Usually your GitHub org/user name.
-  projectName: 'learnndapp', // Usually your repo name.
+  projectName: 'learndapp', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: '智能合約(Smart Contract)與分散式網頁應用(DApp)入門',
