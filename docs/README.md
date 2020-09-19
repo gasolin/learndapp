@@ -1,11 +1,9 @@
 ---
-title: 簡介
+title: Ethereum區塊鏈！智能合約(Smart Contract)與分散式網頁應用(dApp)入門
 slug: /
 ---
 
-# Ethereum區塊鏈！智能合約\(Smart Contract\)與分散式網頁應用\(dApp\)入門
-
-本書介紹了基於乙太坊的智能合約\(Smart Contract\)和分散式網頁應用\(dApp\)。
+本書介紹了基於乙太坊的智能合約(Smart Contract)和分散式網頁應用(dApp)。
 
 ## 作者簡介
 

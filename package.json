@@ -1,6 +1,6 @@
 {
   "name": "learndapp",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Fred Lin",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
+    "deploy": "GIT_USER=gasolin CURRENT_BRANCH=master docusaurus deploy",
     "serve": "docusaurus serve"
   },
   "dependencies": {
@@ -18,7 +18,8 @@
     "clsx": "^1.1.1",
     "mermaid": "^8.8.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-mermaid2": "^0.1.4"
   },
   "browserslist": {
     "production": [

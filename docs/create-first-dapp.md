@@ -2,6 +2,8 @@
 title: 建立第一個DApp
 ---
 
+import Mermaid from 'react-mermaid2'
+
 我們將用僅僅30行來完成第一個DApp。這個DApp可以顯示使用者預設的帳戶地址，並且顯示帳戶上的以太幣餘額。
 
 本書後續的DApp架構並不會再使用`web3.js 1.x`或`web3.js 0.2x.x`版本，而會改用`Ethjs`（支援promise且相對穩定），各種函式庫大同小異，但嘗試過基本的`web3.js`還是對理解區塊鏈DApp開發有幫助。
@@ -11,7 +13,7 @@ title: 建立第一個DApp
 在開始寫DApp之前，我們需要有個網頁伺服器來放DApp，瀏覽器上需安裝好`MetaMask`錢包，並開啟`ganache-cli`本地測試網路。
 實際的架構如下：
 
-{% mermaid %}
+<Mermaid chart={`
 graph TB
 瀏覽器 --- ganache
 DApp --- 瀏覽器
@@ -24,7 +26,7 @@ end
 subgraph  遠端
     ganache
 end
-{% endmermaid %}
+`}/>
 
 除了網頁伺服器的部分之外，閱讀完前面章節的讀者，對`MetaMask`錢包和`ganache`應該都已有經驗。
 

@@ -2,6 +2,8 @@
 title: 建立標準代幣
 ---
 
+import Mermaid from 'react-mermaid2'
+
 我們已寫好並部署完成了簡單的加密代幣🔒💵合約。在閱讀完本文後，你將學會建立一個可以放到乙太幣錢包:purse:的加密代幣🔒💵。
 
 ## 開發前的準備
@@ -76,46 +78,15 @@ contract HelloToken is StandardToken {
 
 ### 講解
 
-
-{% plantuml %}
+<Mermaid chart={`
+classDiagram
 ERC20Basic <|-- BasicToken
 ERC20Basic <|-- ERC20
 SafeMath <|-- BasicToken
 BasicToken <|-- StandardToken
 ERC20 <|-- StandardToken
 StandardToken <|-- HelloToken
-
-class SafeMath {
-}
-
-interface ERC20Basic
-
-class BasicToken {
-+ balances : map
-+ totalSupply_ : uint256
-+ totalSupply()
-+ transfer()
-+ balanceOf()
-}
-
-interface ERC20
-
-class StandardToken {
-- allowed : map
-+ transferFrom()
-+ approve()
-+ allowance()
-+ increaseApproval()
-+ decreaseApproval()
-}
-
-class HelloToken {
-  name : string
-  symbol : string
-  decimals : uint8
-  INITIAL_SUPPLY : uint256
-}
-{% endplantuml %}
+`}/>
 
 ```
 pragma solidity ^0.4.19;

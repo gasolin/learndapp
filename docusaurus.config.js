@@ -1,5 +1,3 @@
-// const remarkMermaid = require('remark-mermaid');
-
 module.exports = {
   title: '智能合約(Smart Contract)與分散式網頁應用(DApp)入門',
   tagline: 'Ethereum區塊鏈！智能合約(Smart Contract)與分散式網頁應用(dApp)入門',
@@ -103,7 +101,6 @@ module.exports = {
         // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-          mermaid: require.resolve('./src/theme/Mermaid.js')
         },
       },
     ],
