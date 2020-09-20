@@ -14,20 +14,20 @@ module.exports = {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
-      items: [
-        // {
-        //   to: 'docs/',
-        //   activeBasePath: 'docs',
-        //   label: 'Docs',
-        //   position: 'left',
-        // },
-        // {to: 'blog', label: 'Blog', position: 'left'},
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
-      ],
+      // items: [
+      //   {
+      //     to: 'docs/',
+      //     activeBasePath: 'docs',
+      //     label: 'Docs',
+      //     position: 'left',
+      //   },
+      //   {to: 'blog', label: 'Blog', position: 'left'},
+      //   {
+      //     href: 'https://github.com/facebook/docusaurus',
+      //     label: 'GitHub',
+      //     position: 'right',
+      //   },
+      // ],
     },
     footer: {
       style: 'dark',
@@ -76,7 +76,10 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} gasolin. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} gasolin. Built with Docusaurus.`
+    },
+    prism: {
+      defaultLanguage: 'javascript',
     },
   },
   presets: [
@@ -100,7 +103,7 @@ module.exports = {
         //     'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         // },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.css')
         },
       },
     ],
