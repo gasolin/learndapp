@@ -2,7 +2,7 @@
 title: 建立第一個DApp
 ---
 
-import Mermaid from 'react-mermaid2'
+import Mermaid from '@theme/Mermaid'
 
 我們將用僅僅30行來完成第一個DApp。這個DApp可以顯示使用者預設的帳戶地址，並且顯示帳戶上的以太幣餘額。
 

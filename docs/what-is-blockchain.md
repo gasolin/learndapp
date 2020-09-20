@@ -2,7 +2,7 @@
 title: 什麼是區塊鏈？
 ---
 
-import Mermaid from 'react-mermaid2'
+import Mermaid from '@theme/Mermaid'
 
 2017年比特幣(Bitcoin)[^1]與以太幣(Ether)[^2]價格紛紛到達新高。主因除了隨著更多支援加密貨幣(Crypto Currency)-當地貨幣的兌換/代購/交易所開張，取得虛擬貨幣/代幣的方式更加多元外，首次公開發行加密代幣(ICO, Initial Coin/Crypto Token Offering)[^3]這種創新的投資/募資方式愈加熱絡，也讓一些個人與機構意識到虛擬貨幣作為貨幣或貨品的投資價值。
 

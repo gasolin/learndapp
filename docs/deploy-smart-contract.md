@@ -2,7 +2,7 @@
 title: 如何部署智能合約？
 ---
 
-import Mermaid from 'react-mermaid2'
+import Mermaid from '@theme/Mermaid'
 
 Ethereum上的智能合約需要使用solidity[2](https://www.gitbook.com/book/gasolin/learn-ethereum-dapp/edit#)語言來撰寫。之前還有其他能用來撰寫智能合約的語言如Serpent\(類Python\)、lll\(類Fortran\)，但目前看到所有公開的智能合約都是使用solidity撰寫。官方宣傳上說solidity是一種類似Javascript的語言，而且圍繞著solidity的各種開發工具鏈都是使用屬於Javascript生態系的npm來提供的。
 

@@ -2,7 +2,7 @@
 title: 使用 React 開發 DApp
 ---
 
-import Mermaid from 'react-mermaid2'
+import Mermaid from '@theme/Mermaid'
 
 就前面的經驗，我們理解一個DApp專案通常包含了`智能合約`與`網頁前端`兩個部份。兩者之間僅透過ABI來互動。因此，在之後的章節裡，我們的專案都會包含兩個獨立的資料夾，分別放置`智能合約`(contract)與`網頁前端`(web)的部份。
 

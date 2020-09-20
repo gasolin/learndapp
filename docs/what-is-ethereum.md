@@ -2,7 +2,7 @@
 title: 什麼是以太坊(Ethereum)
 ---
 
-import Mermaid from 'react-mermaid2'
+import Mermaid from '@theme/Mermaid'
 
 以太坊(Ethereum)是2015年才發展起來的一種新的底層[區塊鏈](https://blog.gasolin.idv.tw/2017/08/10/what-is-blockchain/)技術。以太幣(Ether)是以太坊公有鏈上產生的🔒💵加密貨幣(Crypto　Currency)，除了可以拿來像比特幣(Bitcoin)一樣做交易外，還具有實際的用途。
 
@@ -39,6 +39,8 @@ P2P --- 網際網路
 ## 智能合約能做什麼事？
 
 因為區塊鏈讓交換價值變得更容易，因此從金融創新領域開始應用是很自然的。
+
+可以透過 https://cryptofees.info/ 查詢每天/每週各公鏈或線上服務收到的手續費排行。
 
 ### 創造新的加密代幣
 
