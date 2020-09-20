@@ -1,5 +1,5 @@
 module.exports = {
-  someSidebar: {
+  docs: {
     '簡介': ['README','CHANGELOG'],
     '區塊鏈': [
       'blockchain', 'what-is-blockchain', 'what-is-ethereum',
