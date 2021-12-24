@@ -42,19 +42,31 @@ P2P --- 網際網路
 
 可以透過 https://cryptofees.info/ 查詢每天/每週各公鏈或線上服務收到的手續費排行。
 
-### 創造新的加密代幣
+### 創造新的加密代幣 (TOKEN)
 
 智能合約最基本的應用，就是創造出新的加密代幣！只要[遵循一定的規範](https://theethereum.wiki/w/index.php/ERC20_Token_Standard)\(ERC20\)，部署一份智能合約到以太坊區塊鏈上，任何人都可以可以很容易地創造出自己的加密代幣。
 
 不用像比特幣的山寨幣一樣需要自行徵募礦工。你的加密代幣會以"以太坊的一個智能合約"的形式存在於以太坊的區塊鏈中。現有支援以太幣的錢包與交易所，也可以快速地接入你的加密代幣。只要你發行的加密代幣與代幣背後所代表的服務具有交易的價值，代幣也可能變貨幣。
 
-### 募資
+### 募資 (ICO)
 
 此外，在募資上，智能合約也有無與倫比的優勢。新創公司[ICO](https://cointelegraph.com/news/the-ico-mania-and-its-consequences-on-ethereum)可透過以太坊的智能合約，在收到資助者的以太幣時，自動發出等值的加密代幣。
 
 由於這些加密代幣可交易，如果公司的服務有價值，早期投資人在投資的前期，就可以透過交易加密代幣來調整持有量。
 
 普通的投資人也第一次有機會直接支持自己感興趣的創業者，並可能從而獲得豐厚\([或歸零](https://blog.gasolin.idv.tw/2017/08/12/things-to-know-before-join-ico/)\)的回報。
+
+> 2018 年後 ICO 受到監管，在 2019 後被 DEFI 取代
+
+### 去中心化金融應用 (DEFI)
+
+透過鏈上交易所（Uniswap, Sushiswap），當鋪(MakerDAO)，錢莊（AAVE, Compound）等自助服務，達成金融交易。
+類似ATM或販賣機，在無人服務的情況下，這些透過智能合約建立的自助服務可以用來換匯（交換代幣），存款領息（借貸）。
+
+### 非同質化代幣（NFT）
+
+將數位或實體資產綁定成獨一無二的加密化證書，可用作身分證明，參與證明，擁有證明等。
+將圖片，音樂等NFT化可在如 [OpenSea](https://opensea.io/) 交易所上買賣。
 
 ### 程式能做的事
 
@@ -66,11 +78,13 @@ P2P --- 網際網路
 
 此外，因為缺乏即時調控區塊大小的手段，在一些很熱門的交易時段\(如某些熱門的ICO開放認購時\)，整個網路的交易延遲會變地很長。
 
-諸如[plasma](http://www.investopedia.com/news/what-plasma-and-how-will-it-strengthen-ethereum-blockchain/)，分片(Sharding)，或改採用PoS(Prove of Stake)等提案，都有望進一步解決快速交易的問題。
+~~諸如[plasma](http://www.investopedia.com/news/what-plasma-and-how-will-it-strengthen-ethereum-blockchain/)，分片(Sharding)，或改採用PoS(Prove of Stake)等提案，都有望進一步解決快速交易的問題。~~
+
+現正透過第二層（Layer 2）網路和側鏈（SideChain）的方式提升交易數量，可透過查看 [Ethhole.link](https://ethhole.link) 觀察鏈上資產大致的分佈去向。
 
 智能合約一經部署就永遠存在，除非擁有者啟動智能合約中的自毀\(selfdestruct\)功能。如何升級合約並保存其中的參數與代幣，也是值得探討的課題。
 
-以太坊網路節點上並不適合儲存較大的檔案。目前有[Swarm](https://github.com/ethersphere/swarm)與[IPFS](https://ipfs.io/)等分散式檔案儲存方式可供選擇。
+以太坊網路節點上並不適合儲存較大的檔案。目前有~~[Swarm](https://github.com/ethersphere/swarm)與~~[IPFS](https://ipfs.io/)與[Arweave](https://www.arweave.org/)等分散式檔案儲存方式可供選擇。
 
 ## 參考資料 {#其他參考資料}
 
