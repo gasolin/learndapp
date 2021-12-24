@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklearndapp=self.webpackChunklearndapp||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/learndapp/blog/welcome"},{"title":"Hello","permalink":"/learndapp/blog/hello-world"},{"title":"Hola","permalink":"/learndapp/blog/hola"}]}')}}]);

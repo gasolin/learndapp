@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklearndapp=self.webpackChunklearndapp||[]).push([[453],{514:function(a){a.exports=JSON.parse('{"allTagsPath":"/learndapp/blog/tags","slug":"/learndapp/blog/tags/docusaurus","name":"docusaurus","count":3,"permalink":"/learndapp/blog/tags/docusaurus"}')}}]);

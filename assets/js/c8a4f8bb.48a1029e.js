@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklearndapp=self.webpackChunklearndapp||[]).push([[263],{5876:function(a){a.exports=JSON.parse('{"allTagsPath":"/learndapp/blog/tags","slug":"/learndapp/blog/tags/hello","name":"hello","count":2,"permalink":"/learndapp/blog/tags/hello"}')}}]);
