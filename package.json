@@ -1,6 +1,6 @@
 {
   "name": "learndapp",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "author": "Fred Lin",
   "private": true,
   "scripts": {
@@ -12,13 +12,13 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.64",
-    "@docusaurus/preset-classic": "2.0.0-alpha.64",
-    "@mdx-js/react": "^1.6.18",
+    "@docusaurus/core": "2.0.0-beta.14",
+    "@docusaurus/preset-classic": "2.0.0-beta.14",
+    "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
-    "mermaid": "^8.8.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "mermaid": "^8.13.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "browserslist": {
     "production": [
