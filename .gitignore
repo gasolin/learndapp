@@ -16,7 +16,6 @@ _book
 *.mobi
 *.pdf
 .DS_Store
-yarn.lock
 
 # example
 examples/hello/build/
